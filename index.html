@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>RPA Best Practices</title>
+      <link rel="icon" 
+         type="image/png" 
+         href="robot.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <div class="container">
+         <div style="padding-top: 10px;padding-bottom: 10px; text-align: center;">
+            <h1>RPA Best Practices</h1>
+         </div>
+         <div class="accordion" id="accordionExample">
+            <div class="card">
+               <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  General
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <ul>
+                        <li>Build a <a href="https://www.uipath.com/rpa/center-of-excellence">Center of Excellence (CoE)</a>. Generally, it's seen as an expensive expense and shouldn't be the case, it's more expensive when it's not implemented.</li>
+                        <li>Define an owner for every application, in order to contact for any issue or query.</li>
+                        <li>Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.</li>
+                        <li>Try splitting the bots in small activities that could be reused. This also allows scalability and possibility multi-bot per PC.</li>
+                        <li>Create logs for each and every single bot that contains actions performed, errors, CPU consumption, etc.</li>
+                        <li>All apps should be pre-screened and tested with different RPA platforms before choosing one as the final one. This ensures stability based on your solutions.</li>
+                        <li>Master data should be stored in Excels or Databases (<a href="https://www.sqlite.org/index.html">SQLite</a> is a free option). <b>No data must be hardcoded in the bots.</b></li>
+                        <li>
+                           Define a logic for the logs, for example:
+                           <table class="table">
+                              <tr>
+                              <thead>
+                                 <th>
+                                    Robot ID
+                                 </th>
+                                 <th>
+                                    Robot PC
+                                 </th>
+                                 <th>
+                                    Robot Task
+                                 </th>
+                                 <th>
+                                    Status
+                                 </th>
+                                 <th>
+                                    Starting Time
+                                 </th>
+                                 <th>
+                                    Ending Time
+                                 </th>
+                                 <th>
+                                    SLA
+                                 </th>
+                              </thead>
+                              </tr>
+                           </table>
+                        </li>
+                        <li>Track inline actions of each robot.</li>
+                        <li>Bot should try multiple attempts per action if something didn't work as expected. Ideally, a delay of 500ms should be set and it should be configurable.</li>
+                        <li>Bots should have a try catch logic, if there is an issue, it must notify the team to react, not to stopped the full process and carry on with the next task to process.</li>
+                        <li>In the case of VM, ensure all information is collected like CPU, RAM, etc.</li>
+                        <li>Ideally, a VM infrastructure should be defined. Robots running in VM are less prone to hardware changes.</li>
+                        <li>Ideally, all robots should run in the chosen PCs. Avoid manipulating Citrix from different PCs. This reduces the performance and accuracy.</li>
+                        <li>Define and get approvals for Test, UAT and Production environment with all tools provided by the client. Ensure these tools look the same and have the same IDs to avoid unnecessary reconfigurations when they are moved to Production. SAP for example can have different IDs for the same controls in Prod and Test.</li>
+                        <li>Control all robots from the Control Room, Orchestrator, etc.</li>
+                        <li>Use Image Recognition or Coordinates as the last resources, they tend to be highly inaccurate.</li>
+                        <li>Use the Recorders only for small pieces of the automations. Don't automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.</li>
+                        <li>Keep the same resolution across Test, UAT and Production.</li>
+                        <li>Do not consider projects where there are connectivity issues or multiple networks. Most RPA solutions cannot work offline. They have a requirement of constantly validating its license.
+                        </li>
+                        <li>Projects that require VPN with hard or mobile tokens should be considered at the end.
+                           Projects that require VPN with soft tokens (PC digital) should be considered on the medium term.
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Desktop Apps
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <h4>Generic</h4>
+                     <ul>
+                        <li>Some solutions like UiPath have specialized services for detecting controls based on patterns. It's called AI <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa">Computer Vision</a>. <i>This solutions extends the possibilities to automate in Citrix environments or solutions that the certain controls are invisible for traditional solutions.</i></li>
+                     </ul>
+                     <h4>Windows Apps</h4>
+                     <ul>
+                        <li>Resolution should be exactly the same in Production, Test and UAT. Ideally, run all apps in Maximized.</li>
+                        <li>Investigate if any app or software is under development or constant changes. If any is on this section, it must not be automated until the changes stopped.</li>
+                        <li>Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.</li>
+                        <li>Dropdowns should be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to change.</li>
+                        <li>WPF and UWP are complex to automate. For example, if you have a tabbed GUI, the tabs must be always visible even if it's only one. If you have access to the source code, this change must be done. Without this change, the controls inside of the tab are inaccessible.</li>
+                     </ul>
+                     <h4>Java Apps</h4>
+                     <ul>
+                        <li>UiPath allows to install a Java Access Bridge for custom JRE for automating them (<a href="https://docs.uipath.com/studio/docs/java-extension">more info</a>). <i>This is a mandatory step. It's not fully reliable certain controls might not be available. Only compatible with AWT apps (e.g. Java Swing, Oracle Forms, Fujitsu JBK).</i></li>
+                        <li>In the case of Automtion Anywhere, you need to follow this <a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/bot-creator/customizing-an-automation-client/using-java-settings.html">tutorial</a> first.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  RPA Platforms
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <h4>Command Centers</h4>
+                     <ul>
+                        <li>RPA Command Center and Clients should be on the same network.</li>
+                     </ul>
+                     <h4>Automation Anywhere</h4>
+                     <ul>
+                        <li>
+                           Do not use WorkFlows or MetaBots if they are not required. None of them is supported by A2019.
+                           <ul>
+                              <li>
+                                 WorkFlows cannot be scheduled from the Control Room.
+                              </li>
+                           </ul>
+                        </li>
+                        <li>WPF and UWP apps must be detected with MetaBots. There is no alternative for A2019 at this point of time (Mar 2020).</li>
+                        <li>Dictionaries (Key, Value) in AA11.3+ must be predefined, they cannot be extended in real time.</li>
+                        <li>In all automations on-Premises. There should be an user with admin rights. From time to time any service can stop either in the PC or the control room and they must be restarted manually. Check the Task Scheduler to see if all AA services are running.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Websites
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <ul>
+                        <li>3rd Party websites must be pre-screened. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.
+                        </li>
+                        <li>Use IDs for identifying controls.
+                        </li>
+                        <li>If you have an "unclickable/unfindable" link, check the source code of the website. In some situations, certain links can run JavaScript code in order to download files.
+                        </li>
+                        <li>For better support, you can use Selenium for building small automations.
+                        </li>
+                        <li>For websites built on ASP .NET </li>
+                        <li>Web Forms. The IDs tend to be dynamic in most of cases and this can impact the RPA. If you have access to the source code set ClientIDMode="Static" to all controls in ASP .NET 4+. If you don't have, you might need to Map the possible IDs in a Database and Loop through them to test all possibilities, if there is an exception, this should be immediately notified to the support team via Email.
+                        </li>
+                        <li>All controls from internal websites must have IDs. The lack of them can create inaccuracies.
+                        </li>
+                        <li>Selects must be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to adapt.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Macros
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <ul>
+                        <li>Only if there is a requirement from the Client, Macros logic should be switched to RPA logic. If there is no agreement, it's better to keep the Macro as it is.</li>
+                        <li>Average execution time must be documented. Also, if there is any historical data of the execution time for large files, it should be documented.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Authentication
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <ul>
+                        <li>General mailboxes and Robots' PCs should have non-Expiring passwords. If the client doesn't agree, preconfigure a Robot to send a reminder and document all this information.</li>
+                        <li>Any process that involves Multi-Factor Authentication shouldn't be consider in the beginning. You might need to reach agreements to remove it for robo-users.
+                        </li>
+                        <li>Use the credential vault manager of the RPA solutions by default.
+                        </li>
+                        <li>In the case of .NET solutions use the app.config/web.config encrypted. You can keep a backup copy unencrypted for test purposes.
+                        </li>
+                        <li>In the case of Java apps. The info can be store in the web.xml, .configuration, AppConfig.xml, etc.
+                        </li>
+                        <li>Ensure no passwords are stored in logs or displayed in GUIs.
+                        </li>
+                        <li>Identify all apps that need authentication and ensure the re-login time is assessed.
+                        </li>
+                        <li>If an app becomes unresponsive (check task scheduler) after certain time when it's trying to login. Notify the team immediately.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  Volume
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <ul>
+                     <li>Document the volume of transactions for every process (daily, weekly, etc.). Many times, this is an over-seen point.</li>
+                     <li>Document the response time of the macros, websites, etc. This would help in the area of creating approximations for execution.</li>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  Documents processing
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <h4>Generic</h4>
+                     <ul>
+                        <li>Document all actions performed based on the files. For example, if you're reading an Excel, identify how many columns are going to be used and how many actions are going to be taken.</li>
+                     </ul>
+                     <h4>Scanned documents</h4>
+                     <ul>
+                        <li>Any PDF or Word document must be transformed into TIFF. In the case of .NET developments, you can use <a href="https://github.com/dlemstra/Magick.NET">ImageMagick.NET</a> with <a href="https://www.ghostscript.com/">GhostScript</a>.</li>
+                        <li>Identify all documents that could be encrypted and decrypted all in advance. You could try partially automating this task with <a href="http://qpdf.sourceforge.net/">QPDF</a>.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                  Notifications
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <ul>
+                        <li>An asynchronous task can be set in the Task Scheduler in order to monitor if the RPA is working. If the RPA solution stopped, it should send a notification by itself.</li>
+                        <ul>
+                           <li>This task can monitor if there was any connectivity issue and notify the support team. Most RPA solutions cannot continue working if the connection was lost. The tasks generally need to be restored manually.</li>
+                        </ul>
+                        <li>An asynchronous task should check constantly the CPU utilization if there is beyond 90% a notification must be sent. 
+                        </li>
+                        <li>An email can be sent at the beginning of each bot.
+                        </li>
+                        <li>An email confirmation must be sent each time a robot finished.
+                        </li>
+                        <li>An email report should be sent at end of the day to the manager to check the performance of the bots.
+                        </li>
+                        <li>Ensure that only authorized emails can be sent the notification. Double check for external emails.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                  ERP
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <h4>SAP</h4>
+                     <ul>
+                        <li>Enable SAP Scripting. If SAP Scripting is not enabled, the recognition of controls can be very poor and inefficient.
+                        </li>
+                        <li>Use SAP recognition controls provided by the RPAs as the default option when they're available.
+                        </li>
+                        <li>SAP could have multiple kernels mapped. This can bring slowness in the login. It's suggested to have mapped a maximum of 3 kernels per PC.
+                        </li>
+                        <li>If you require SAP downloads, you can consider to use SAP layout creation. This allows you to create a list of columns to be downloaded.
+                        </li>
+                        <li>Use the "Find" option to search by field name. In this way, the field will always appear on the top of the table.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header" id="headingEleven">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                  YOUR ONE!
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMgadwl-1EQ74d2XLjiK_OpBHwmGtKVrB2lHuKyBe25PcRvQ/viewform?embedded=true" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <footer class="page-footer font-small blue">
+         <!-- Copyright -->
+         <div class="footer-copyright text-center py-3">&copy; 2020 - <a href="https://federiconavarrete.com">Federico Navarrete</a> and <a href="https://supernovaic.tk">Supernova IC</a>
+         </div>
+         <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+   </body>
+</html>
