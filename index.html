@@ -38,6 +38,7 @@
                         <li>Ideally, all robots should run on the chosen PCs. <b>Avoid manipulating Citrix "PCs" from others.</b> This reduces the performance and accuracy.</li>
                         <li>Control all robots from the Control Room, Orchestrator, etc.</li>
                         <li>Develop all robots in Virtual Machines with the same resolution.</li>
+                        <li>Track inline actions of each robot.</li>
                         <li>Use Image Recognition or Coordinates as the last resources. They tend to be highly inaccurate.</li>
                         <li>Use the Recorders only for small pieces of the automations. Don't automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.</li>
                      </ul>
@@ -79,8 +80,7 @@
                <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionExample">
                   <div class="card-body">
                      <ul>
-                        <li>Track inline actions of each robot.</li>
-                        <li>Create logs for each and every single bot that contains actions performed, errors, CPU consumption, etc.</li>
+                        <li>Logs should contain all actions performed including errors, CPU consumption, etc.</li>
                         <li>
                            Define a logic for the logs, for example:
                            <table class="table">
