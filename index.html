@@ -17,12 +17,12 @@
          <div style="padding-top: 10px;padding-bottom: 10px; text-align: center;">
             <h1>🤖 RPA Best Practices</h1>
          </div>
-         <div class="accordion" id="accordionExample">
+         <div class="accordion" id="accordionExample" style="display: none">
             <div class="card">
                <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
                   <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  General
+                  Basics
                   </button>
                   </h4>
                </div>
@@ -33,9 +33,10 @@
                         <li>Define an owner for every application, in order to contact for any issue or query.</li>
                         <li>Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.</li>
                         <li>Try splitting the bots in small activities that could be reused. This also allows scalability and possibility multi-bot per PC.</li>
-                        <li>Create logs for each and every single bot that contains actions performed, errors, CPU consumption, etc.</li>
                         <li>All apps should be pre-screened and tested with different RPA platforms before choosing one as the final one. This ensures stability based on your solutions.</li>
                         <li>Master data should be stored in Excels or Databases (<a href="https://www.sqlite.org/index.html">SQLite</a> is a free option). <b>No data must be hardcoded in the bots.</b></li>
+                        <li>Track inline actions of each robot.</li>
+                        <li>Create logs for each and every single bot that contains actions performed, errors, CPU consumption, etc.</li>
                         <li>
                            Define a logic for the logs, for example:
                            <table class="table">
@@ -66,22 +67,32 @@
                               </tr>
                            </table>
                         </li>
-                        <li>Track inline actions of each robot.</li>
                         <li>Bot should try multiple attempts per action if something didn't work as expected. Ideally, a delay of 500ms should be set and it should be configurable.</li>
                         <li>Bots should have a try catch logic, if there is an issue, it must notify the team to react, not to stopped the full process and carry on with the next task to process.</li>
-                        <li>In the case of VM, ensure all information is collected like CPU, RAM, etc.</li>
-                        <li>Ideally, a VM infrastructure should be defined. Robots running in VM are less prone to hardware changes.</li>
-                        <li>Ideally, all robots should run in the chosen PCs. Avoid manipulating Citrix from different PCs. This reduces the performance and accuracy.</li>
+                        <li>Define, a Infrastructure as a Service in a <b>cloud</b>. <i>Robots running in VM are less prone to hardware changes or disruptions.</i> Suggested basic infrastructure:
+                        <ul>
+                           <li>
+                              One VM for the Command Center.
+                           </li>
+                           <li>
+                              One VM for the Command Center Database.
+                           </li>
+                           <li>
+                              One template VM for the bot PC. This one would be replicated to all new bots.
+                           </li>
+                        </ul>
+                        </li>
+                        <li>Ideally, all robots should run on the chosen PCs. <b>Avoid manipulating Citrix "PCs" from others.</b> This reduces the performance and accuracy.</li>
+                        <li>Collect all information is collected in each robo PC like CPU, RAM, etc.</li>
                         <li>Define and get approvals for Test, UAT and Production environment with all tools provided by the client. Ensure these tools look the same and have the same IDs to avoid unnecessary reconfigurations when they are moved to Production. SAP for example can have different IDs for the same controls in Prod and Test.</li>
                         <li>Control all robots from the Control Room, Orchestrator, etc.</li>
-                        <li>Use Image Recognition or Coordinates as the last resources, they tend to be highly inaccurate.</li>
-                        <li>Use the Recorders only for small pieces of the automations. Don't automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.</li>
-                        <li>Keep the same resolution across Test, UAT and Production.</li>
                         <li>Do not consider projects where there are connectivity issues or multiple networks. Most RPA solutions cannot work offline. They have a requirement of constantly validating its license.
                         </li>
                         <li>Projects that require VPN with hard or mobile tokens should be considered at the end.
                            Projects that require VPN with soft tokens (PC digital) should be considered on the medium term.
                         </li>
+                        <li>Use Image Recognition or Coordinates as the last resources. They tend to be highly inaccurate.</li>
+                        <li>Use the Recorders only for small pieces of the automations. Don't automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.</li>
                      </ul>
                   </div>
                </div>
@@ -98,11 +109,10 @@
                   <div class="card-body">
                      <h4>Generic</h4>
                      <ul>
-                        <li>Some solutions like UiPath have specialized services for detecting controls based on patterns. It's called AI <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa">Computer Vision</a>. <i>This solutions extends the possibilities to automate in Citrix environments or solutions that the certain controls are invisible for traditional solutions.</i></li>
+                        <li>Resolution must be exactly the same in Production, Test and UAT. Ideally, run all apps in Maximized.</li>
                      </ul>
                      <h4>Windows Apps</h4>
                      <ul>
-                        <li>Resolution should be exactly the same in Production, Test and UAT. Ideally, run all apps in Maximized.</li>
                         <li>Investigate if any app or software is under development or constant changes. If any is on this section, it must not be automated until the changes stopped.</li>
                         <li>Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.</li>
                         <li>Dropdowns should be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to change.</li>
@@ -113,6 +123,7 @@
                         <li>UiPath allows to install a Java Access Bridge for custom JRE for automating them (<a href="https://docs.uipath.com/studio/docs/java-extension">more info</a>). <i>This is a mandatory step. It's not fully reliable certain controls might not be available. Only compatible with AWT apps (e.g. Java Swing, Oracle Forms, Fujitsu JBK).</i></li>
                         <li>In the case of Automtion Anywhere, you need to follow this <a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/bot-creator/customizing-an-automation-client/using-java-settings.html">tutorial</a> first.</li>
                      </ul>
+                     <i>* Some tricky situations can be handled by <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa">Computer Vision</a> with UiPath.</i>
                   </div>
                </div>
             </div>
@@ -133,7 +144,7 @@
                      <h4>Automation Anywhere</h4>
                      <ul>
                         <li>
-                           Do not use WorkFlows or MetaBots if they are not required. None of them is supported by A2019.
+                           Limit the usage of WorkFlows or MetaBots. None of them is supported by A2019.
                            <ul>
                               <li>
                                  WorkFlows cannot be scheduled from the Control Room.
@@ -143,6 +154,7 @@
                         <li>WPF and UWP apps must be detected with MetaBots. There is no alternative for A2019 at this point of time (Mar 2020).</li>
                         <li>Dictionaries (Key, Value) in AA11.3+ must be predefined, they cannot be extended in real time.</li>
                         <li>In all automations on-Premises. There should be an user with admin rights. From time to time any service can stop either in the PC or the control room and they must be restarted manually. Check the Task Scheduler to see if all AA services are running.</li>
+                        
                      </ul>
                   </div>
                </div>
@@ -158,7 +170,7 @@
                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                   <div class="card-body">
                      <ul>
-                        <li>3rd Party websites must be pre-screened. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.
+                        <li>3rd party websites must be pre-screened. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.
                         </li>
                         <li>Use IDs for identifying controls.
                         </li>
@@ -166,8 +178,7 @@
                         </li>
                         <li>For better support, you can use Selenium for building small automations.
                         </li>
-                        <li>For websites built on ASP .NET </li>
-                        <li>Web Forms. The IDs tend to be dynamic in most of cases and this can impact the RPA. If you have access to the source code set ClientIDMode="Static" to all controls in ASP .NET 4+. If you don't have, you might need to Map the possible IDs in a Database and Loop through them to test all possibilities, if there is an exception, this should be immediately notified to the support team via Email.
+                        <li>For websites built on <b><a href="https://dotnet.microsoft.com/apps/aspnet/web-forms">ASP.NET Web Forms</a></b>. The IDs tend to be dynamic in most of cases and this can impact the RPA. If you have access to the source code set <i><b>ClientIDMode="Static"</b></i> to all controls in ASP.NET 4+. <i>If you have a lower version, you might need to Map the possible IDs in a Database and Loop through them to test all possibilities. If there is an exception, this should be immediately notified to the support team via Email.</i>
                         </li>
                         <li>All controls from internal websites must have IDs. The lack of them can create inaccuracies.
                         </li>
@@ -180,7 +191,7 @@
                <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
                   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Macros
+                  VBA Macros
                   </button>
                   </h4>
                </div>
@@ -226,7 +237,7 @@
                <div class="card-header" id="headingSeven">
                   <h2 class="mb-0">
                   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                  Volume
+                  Volume to process
                   </button>
                   </h4>
                </div>
@@ -314,6 +325,22 @@
                </div>
             </div>
             <div class="card">
+               <div class="card-header" id="headingTwelve">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                  Citrix
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <ul>
+                        <li>Some solutions like UiPath have specialized services for detecting controls based on patterns. It's called AI <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa">Computer Vision</a>.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
                <div class="card-header" id="headingEleven">
                   <h2 class="mb-0">
                   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
@@ -337,5 +364,11 @@
          <!-- Copyright -->
       </footer>
       <!-- Footer -->
+      <script>
+         $(function(){
+            $('#accordionExample .collapse').collapse('toggle');
+            $('#accordionExample').show();
+         })
+      </script>
    </body>
 </html>
