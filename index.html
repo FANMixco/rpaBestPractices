@@ -71,6 +71,88 @@
                </div>
             </div>
             <div class="card">
+               <div class="card-header" id="headingFifteen">
+                  <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                     Infrastructure
+                  </button>
+                  </h4>
+               </div>
+               <div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen" data-parent="#accordionExample">
+                  <div class="card-body">
+                     <ul>
+                        <li>Define a Infrastructure as a Service (IaaS) in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.). <i>Robots running in VM are less prone to hardware changes or disruptions.</i> Suggested basic infrastructure:
+                           <ul>
+                              <li>
+                                 One VM for the Command Center.
+                                 <table class="table">
+                                    <thead>
+                                       <tr>
+                                          <th>Processor</th>
+                                          <th>RAM</th>
+                                          <th>Storage</th>
+                                          <th>Network</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td>8 core Intel Xeon Processor</td>
+                                          <td>16 GB</td>
+                                          <td>128 GB</td>
+                                          <td>10 GbE</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </li>
+                              <li>
+                                 One VM for the Command Center Database.
+                                 <table class="table">
+                                    <thead>
+                                       <tr>
+                                          <th>Processor</th>
+                                          <th>RAM</th>
+                                          <th>Storage</th>
+                                          <th>Network</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td>8 core Intel Xeon Processor</td>
+                                          <td>16 GB</td>
+                                          <td>128 GB</td>
+                                          <td>10 GbE</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </li>
+                              <li>
+                                 One template VM for the bot PC. This one would be replicated to all new bots.
+                                 <table class="table">
+                                    <thead>
+                                       <tr>
+                                          <th>Processor</th>
+                                          <th>RAM</th>
+                                          <th>Storage</th>
+                                          <th>Network</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td>4 virtual CPU (vCPU) or Logical Processor with 1.2 to 1.5 GHz speed per vCPU</td>
+                                          <td>8 GB</td>
+                                          <td>64 GB</td>
+                                          <td>1 GbE</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
                <div class="card-header" id="headingFourteen">
                   <h2 class="mb-0">
                   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
@@ -112,34 +194,7 @@
                               </tr>
                            </table>
                         </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-            <div class="card">
-               <div class="card-header" id="headingFifteen">
-                  <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
-                     Infrastructure
-                  </button>
-                  </h4>
-               </div>
-               <div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen" data-parent="#accordionExample">
-                  <div class="card-body">
-                     <ul>
-                        <li>Define, a Infrastructure as a Service in a <b>cloud</b>. <i>Robots running in VM are less prone to hardware changes or disruptions.</i> Suggested basic infrastructure:
-                           <ul>
-                              <li>
-                                 One VM for the Command Center.
-                              </li>
-                              <li>
-                                 One VM for the Command Center Database.
-                              </li>
-                              <li>
-                                 One template VM for the bot PC. This one would be replicated to all new bots.
-                              </li>
-                           </ul>
-                        </li>
+                        <li>Minimal status: Running, Finished and Stopped</li>
                      </ul>
                   </div>
                </div>
