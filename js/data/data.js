@@ -31,6 +31,7 @@ let data = [{
                 `Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.`,
                 `Collect all information where the process was running, CPU, RAM, etc.`,
                 `Document average execution time of all applications. If there is any historical data of any pick. It should be documented with its details.`,
+                `Investigate if any app or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
                 `Do not consider projects where there are connectivity issues or multiple networks. Most RPA solutions cannot work offline. They have a requirement of constantly validating its license.`,
                 `Define and get approvals for Test, UAT and Production environment for all tools in advance. Ensure these tools look the same and have the same IDs to avoid unnecessary reconfigurations when they are moved to Production. <i>SAP, for example, can have different IDs for the same controls in Prod and Test.</i>`,
                 `Projects that require VPN with <b>soft tokens (PC digital)</b> should be considered on the medium term.`,
@@ -157,7 +158,7 @@ let data = [{
         "practices": [{
                 "title": "General",
                 "content": [
-                    `Resolution must be exactly the same in Production, Test and UAT.`,
+                    `The resolution must be exactly the same in Test, UAT and Production.`,
                     `Run all apps in <b>maximized (full screen)</b> for the best performace.`,
                     `Close all apps ran by the bot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
                     `Don't run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`
@@ -166,7 +167,6 @@ let data = [{
             {
                 "title": "Microsoft technologies (Windows Forms, UWP and WPF)",
                 "content": [
-                    `Investigate if any app or software is under development or constant changes. If any is on this section, it must not be automated until the changes stopped.`,
                     `Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.`,
                     `Dropdowns should be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to change.`,
                     `<b>WPF and UWP are complex to automate.</b> For example, if you have a tabbed GUI, the tabs must be always visible even if it's only one. If you have access to the source code, this change must be done. Without this change, the controls inside of the tab are inaccessible.`
