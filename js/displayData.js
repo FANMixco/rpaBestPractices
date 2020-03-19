@@ -1,6 +1,6 @@
 const cardTemplate = `<div class="card">
 <div class="card-header" id="heading{0}">
-   <h2 class="mb-0">
+   <h4 class="mb-0">
    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{0}" aria-expanded="false" aria-controls="collapse{0}">{1}</button>
    </h4>
 </div>
@@ -11,7 +11,7 @@ const cardTemplate = `<div class="card">
 
 const contactIFrame = `<div class="card">
 <div class="card-header" id="headingContact">
-   <h2 class="mb-0">
+   <h4 class="mb-0">
    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseContact" aria-expanded="false" aria-controls="collapseContact">
    YOUR ONE!
    </button>
