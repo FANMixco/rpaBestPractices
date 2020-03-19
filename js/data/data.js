@@ -27,8 +27,9 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
+                `Identify <b>Low hanging fruits</b> and <b>Quick wins</b> for the first steps. Later, work in the Must-do Improvements and Long-term Improvements (<a href="https://www.uipath.com/rpa/academy/training">more info</a>).`,
                 `3rd party websites must be pre-screened. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.`,
-                `Define an owner for every application, in order to contact for any issue or query.`,
+                `Define an owner for every application, in order to contact in case of any issue or query.`,
                 `Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.`,
                 `Collect all information where the process was running, CPU, RAM, etc.`,
                 `Document average execution time of all applications. If there is any historical data of any pick. It should be documented with its details.`,
