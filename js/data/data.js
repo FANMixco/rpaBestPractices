@@ -171,7 +171,7 @@ let data = [{
                 "title": "Microsoft technologies (Windows Forms, UWP and WPF)",
                 "content": [
                     `WPF/UWP apps can only be automated with <b>MetaBots</b> in Automation Anywhere 10 or 11.`,
-                    `Non-3rd party <a href="https://3.bp.blogspot.com/-eqX4iRh0JdE/UKdJJFzFbII/AAAAAAAAATQ/toLEV8RoSXI/s1600/WPFDynamicTab.png" target="_blank">Tabbed <b>WPF</b> apps</a> must be re-written. All tabs needs to be always visible even if it's only one. If this is ignored, the content inside is going to inaccessible until you open a new tab.`
+                    `Non-3rd party <a href="https://3.bp.blogspot.com/-eqX4iRh0JdE/UKdJJFzFbII/AAAAAAAAATQ/toLEV8RoSXI/s1600/WPFDynamicTab.png" target="_blank">Tabbed <b>WPF</b> apps</a> must be re-written. All tabs must be always visible even if it's only one. If you ignore this, the content inside of the tab is going to inaccessible by the RPAs (until you open a new tab).`
                 ]
             },
             {
