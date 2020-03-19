@@ -27,11 +27,12 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
+                `3rd party websites must be pre-screened. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.`,
                 `Define an owner for every application, in order to contact for any issue or query.`,
                 `Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.`,
                 `Collect all information where the process was running, CPU, RAM, etc.`,
                 `Document average execution time of all applications. If there is any historical data of any pick. It should be documented with its details.`,
-                `Investigate if any app or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
+                `Investigate if any app, website or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
                 `Do not consider projects where there are connectivity issues or multiple networks. Most RPA solutions cannot work offline. They have a requirement of constantly validating its license.`,
                 `Define and get approvals for Test, UAT and Production environment for all tools in advance. Ensure these tools look the same and have the same IDs to avoid unnecessary reconfigurations when they are moved to Production. <i>SAP, for example, can have different IDs for the same controls in Prod and Test.</i>`,
                 `Projects that require VPN with <b>soft tokens (PC digital)</b> should be considered on the medium term.`,
@@ -161,22 +162,23 @@ let data = [{
                     `The resolution must be exactly the same in Test, UAT and Production.`,
                     `Run all apps in <b>maximized (full screen)</b> for the best performace.`,
                     `Close all apps ran by the bot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
-                    `Don't run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`
+                    `Don't run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`,
+                    `Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.`,
+                    `Dropdowns should be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to change.`
                 ]
             },
             {
                 "title": "Microsoft technologies (Windows Forms, UWP and WPF)",
                 "content": [
-                    `Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.`,
-                    `Dropdowns should be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to change.`,
-                    `<b>WPF and UWP are complex to automate.</b> For example, if you have a tabbed GUI, the tabs must be always visible even if it's only one. If you have access to the source code, this change must be done. Without this change, the controls inside of the tab are inaccessible.`
+                    `WPF/UWP apps can only be automated with <b>MetaBots</b> in Automation Anywhere 10 or 11.`,
+                    `Non-3rd party <a href="https://3.bp.blogspot.com/-eqX4iRh0JdE/UKdJJFzFbII/AAAAAAAAATQ/toLEV8RoSXI/s1600/WPFDynamicTab.png" target="_blank">Tabbed <b>WPF</b> apps</a> must be re-written. All tabs needs to be always visible even if it's only one. If this is ignored, the content inside is going to inaccessible until you open a new tab.`
                 ]
             },
             {
                 "title": "Java",
                 "content": [
                     `UiPath allows to install a Java Access Bridge for custom JRE for automating them (<a href="https://docs.uipath.com/studio/docs/java-extension" target="_blank">more info</a>). <i>This is a mandatory step. It's not fully reliable certain controls might not be available. Only compatible with AWT apps (e.g. Java Swing, Oracle Forms, Fujitsu JBK).</i>`,
-                    `In the case of Automtion Anywhere, you need to follow this <a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/bot-creator/customizing-an-automation-client/using-java-settings.html" target="_blank">tutorial</a> first.`,
+                    `In the case of Automation Anywhere, you need to follow this <a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/bot-creator/customizing-an-automation-client/using-java-settings.html" target="_blank">tutorial</a> first.`,
                 ]
             }
         ]
@@ -212,7 +214,6 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `3rd party websites must be pre-screened. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.`,
                 `Use IDs for identifying controls.`,
                 `If you have an "unclickable/unfindable" link, check the source code of the website. In some situations, certain links can run JavaScript code in order to download files.`,
                 `For better support, you can use Selenium for building small automations.`,
