@@ -5,7 +5,7 @@ let data = [{
             "title": "",
             "content": [
                 `Build a <a href="https://www.uipath.com/rpa/center-of-excellence" target="_blank">Center of Excellence (CoE)</a>. Generally, it's seen as an expensive expense and shouldn't be the case, it's more expensive when it's not implemented.`,
-                `Define an Infrastructure as a Service (IaaS) in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.). <i>Robots running in VMs are less prone to errors due to hardware changes. Also, they can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</i>`,
+                `Define an <b>Infrastructure as a Service (IaaS)</b> in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.). <i>Robots running in VMs are less prone to errors due to hardware changes. Also, they can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</i>`,
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
                 `Try splitting the bots in small tasks that could be reused. This allows scalability and multi-bot per PC.`,
@@ -157,7 +157,10 @@ let data = [{
         "practices": [{
                 "title": "General",
                 "content": [
-                    `Resolution must be exactly the same in Production, Test and UAT. Ideally, run all apps in <b>Maximized</b>.`
+                    `Resolution must be exactly the same in Production, Test and UAT.`,
+                    `Run all apps in <b>maximized (full screen)</b> for the best performace.`,
+                    `Close all apps ran by the bot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
+                    `Don't run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`
                 ]
             },
             {
