@@ -121,7 +121,7 @@ let data = [{
             "content": [
                 `Logs should contain all actions performed including errors, CPU consumption, etc.</li>
                 <li>
-                Define a logic for the logs, for example:
+                Define a logic for the logs (<a href="logsTemplate.db">template</a> in SQLite), for example:
                 <table class="table">
                     <tr>
                     <thead>
