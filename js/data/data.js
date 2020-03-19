@@ -216,7 +216,7 @@ let data = [{
                 `Use IDs for identifying controls.`,
                 `If you have an "unclickable/unfindable" link, check the source code of the website. In some situations, certain links can run JavaScript code in order to download files.`,
                 `For better support, you can use Selenium for building small automations.`,
-                `For websites built on <b><a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a></b>. The IDs tend to be dynamic in most of cases and this can impact the RPA. If you have access to the source code set <i><b>ClientIDMode="Static"</b></i> to all controls in ASP.NET 4+. <i>If you have a lower version, you might need to Map the possible IDs in a Database and Loop through them to test all possibilities. If there is an exception, this should be immediately notified to the support team via Email.</i>`,
+                `For websites built on <b><a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a></b>. The IDs tend to be dynamic in most of the cases and this can impact the RPA. If you have access to the source code set <i><b>ClientIDMode="Static"</b></i> to all controls in ASP.NET 4+. <i>If you have a lower version, you might need to Map the possible IDs in a Database and Loop through them to test all possibilities. If there is an exception, this should be immediately notified to the support team via Email.</i>`,
                 `All controls from internal websites must have IDs. The lack of them can create inaccuracies.`,
                 `Selects must be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to adapt.`
             ]
@@ -229,7 +229,8 @@ let data = [{
             "title": "",
             "content": [
                 `Only if there is a requirement from the client, Macros logic should be switched to RPA logic.`,
-                `Average execution times must be documented. This allows to kill any Macro in the middle of a long process.`
+                `Average execution times must be documented. This allows to kill any Macro in the middle of a long process.`,
+                `Remove all <b>Dialogs</b> (<a href="https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/msgbox-function" target="_blank">MsgBox</a> or <a href="https://docs.microsoft.com/en-us/office/vba/api/excel.application.inputbox" target="_blank">InputBox</a>). They can break the RPAs in most of the cases. If they are mandatory, you must implement new logic. You can write it in RPAs, databases, external files, etc.`
             ]
         }]
     },
