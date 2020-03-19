@@ -42,12 +42,12 @@ let data = [{
         "section": "Infrastructure",
         "notes": [],
         "practices": [{
-            "title": "",
+            "title": "Cloud",
             "content": [
                 `Suggested basic infrastructure:
             <ul>
             <li>
-                One VM for the Command Center.
+                One VM for the <b>Command Center App</b>.
                 <table class="table">
                     <thead>
                         <tr>
@@ -68,7 +68,7 @@ let data = [{
                 </table>
             </li>
             <li>
-                One VM for the Command Center Database.
+                One VM for the <b>Command Center Database</b>.
                 <table class="table">
                     <thead>
                         <tr>
@@ -87,7 +87,7 @@ let data = [{
                         </tr>
                     </tbody>
                 </table>`,
-                `One template VM for the bot PC. This one would be replicated to all new bots.
+                `One <b>template</b> VM for the <b>bot PC</b>. <i>This one would be replicated to all new bots.</i>
                 <table class="table">
                     <thead>
                         <tr>
@@ -106,7 +106,8 @@ let data = [{
                         </tr>
                     </tbody>
                 </table>
-            </ul>`
+            </ul>`,
+            `Suggested providers: Azure, AWS and Google Cloud.`
             ]
         }]
     },
