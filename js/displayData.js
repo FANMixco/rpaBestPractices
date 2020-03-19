@@ -24,6 +24,22 @@ const contactIFrame = `<div class="card">
 </div>
 </div>`;
 
+const commentsIFrame = `<div class="card">
+<div class="card-header" id="headingComments">
+   <h4 class="mb-0">
+   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseComments" aria-expanded="false" aria-controls="collapseComments">
+   Contact us
+   </button>
+   </h4>
+</div>
+<div id="collapseComments" class="collapse" aria-labelledby="headingComments" data-parent="#accordionRPA">
+   <div class="card-body">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfzwbVLI1lsj64rsakoA6oUkBtKC1gtSx1qi4lDZ4yr9G4wSg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+   </div>
+</div>
+</div>`;
+
+
 $(function(){
     for(let item in data) {
         let elem = data[item];
@@ -60,6 +76,7 @@ $(function(){
     }
     
     $("#accordionRPA").append(contactIFrame);
+    $("#accordionRPA").append(commentsIFrame);
 });
 
 String.prototype.format = function() {

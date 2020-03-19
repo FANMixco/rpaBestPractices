@@ -269,8 +269,8 @@ let data = [{
         },{
             "title": "Scanned documents",
             "content": [
-                `Any PDF or Word document must be transformed into TIFF. In the case of .NET developments, you can use <a href="https://github.com/dlemstra/Magick.NET" target="_blank">ImageMagick.NET</a> with <a href="https://www.ghostscript.com/">GhostScript</a>.`,
-                `Identify all documents that could be encrypted and decrypted all in advance. You could try partially automating this task with <a href="http://qpdf.sourceforge.net" target="_blank">QPDF</a>.`
+                `PDFs or Word documents must be transformed into <b>TIFF</b>. This ensures no metadata corrupts their processing. <i>In the case of .NET developments, you can use <a href="https://github.com/dlemstra/Magick.NET" target="_blank">ImageMagick.NET</a> with <a href="https://www.ghostscript.com/">GhostScript</a></i>.`,
+                `Identify all documents that could be encrypted and decrypt in advance. You could partially automate this task with <a href="http://qpdf.sourceforge.net" target="_blank">QPDF</a>.`
             ]
         }]
     },
