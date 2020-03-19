@@ -5,7 +5,7 @@ let data = [{
             "title": "",
             "content": [
                 `Build a <a href="https://www.uipath.com/rpa/center-of-excellence" target="_blank">Center of Excellence (CoE)</a>. Generally, it's seen as an expensive expense and shouldn't be the case, it's more expensive when it's not implemented.`,
-                `Define an Infrastructure as a Service (IaaS) in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.). <i>Robots running in VM are less prone to hardware changes or any service disruption.</i>`,
+                `Define an Infrastructure as a Service (IaaS) in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.). <i>Robots running in VMs are less prone to errors due to hardware changes. Also, they can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</i>`,
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
                 `Try splitting the bots in small tasks that could be reused. This allows scalability and multi-bot per PC.`,
