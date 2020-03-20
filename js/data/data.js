@@ -167,7 +167,7 @@ let data = [{
                     `Close all apps ran by the bot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
                     `Don't run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`,
                     `Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.`,
-                    `Dropdowns should be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to change.`
+                    `Dropdowns should be access through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to change.`
                 ]
             },
             {
@@ -213,16 +213,14 @@ let data = [{
     },
     {
         "section": "Websites",
-        "notes": [],
+        "notes": [`* <i>Unclickable links could mean JavaScript created links. Inspect the source code. If this is the case, a JS injection is required.</i>`,`* <i>Challenging situations can be refactored in small projects with <a href="https://www.selenium.dev/" target="_blank">Selenium</a>.</i>`],
         "practices": [{
             "title": "",
             "content": [
                 `Use IDs for identifying controls.`,
-                `If you have an "unclickable/unfindable" link, check the source code of the website. In some situations, certain links can run JavaScript code in order to download files.`,
-                `For better support, you can use Selenium for building small automations.`,
-                `For websites built on <b><a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a></b>. The IDs tend to be dynamic in most of the cases and this can impact the RPA. If you have access to the source code set <i><b>ClientIDMode="Static"</b></i> to all controls in ASP.NET 4+. <i>If you have a lower version, you might need to Map the possible IDs in a Database and Loop through them to test all possibilities. If there is an exception, this should be immediately notified to the support team via Email.</i>`,
                 `All controls from internal websites must have IDs. The lack of them can create inaccuracies.`,
-                `Selects must be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to adapt.`
+                `For websites built on <b><a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a></b>. The IDs tend to be dynamic in most of the cases and this can impact the RPA. If you have access to the source code set <i><b>ClientIDMode="Static"</b></i> to all controls in ASP.NET 4+. <i>If you have a lower version, you might need to Map the possible IDs in a Database and Loop through them to test all possibilities. If there is an exception, this should be immediately notified to the support team via Email.</i>`,
+                `Selects must be access through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to adapt.`
             ]
         }]
     },

@@ -66,8 +66,16 @@ $(function(){
             fullPractice += `${practiceTxt}</ul>`;
         }
 
+        if (elem.notes.length > 0) {
+            notes = `<h5>Notes:</h5><ul style="list-style-type:square;">`;
+        }
+
         for (let note in elem.notes) {
-            notes = `<i>${elem.notes[note]}</i>`;
+            notes += `<li><i>${elem.notes[note]}</i></li>`;
+        }
+
+        if (notes !== "") {
+            notes += '</ul>';
         }
 
         let card = cardTemplate.format(item).format(item).format(item).format(item).format(item, elem.section, fullPractice, notes);
