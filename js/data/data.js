@@ -5,7 +5,7 @@ let data = [{
             "title": "",
             "content": [
                 `Build a <a href="https://www.uipath.com/rpa/center-of-excellence" target="_blank">Center of Excellence (CoE)</a>. Generally, it's seen as an expensive expense and shouldn't be the case, it's more expensive when it's not implemented.`,
-                `All apps should be pre-screened and tested with different RPA platforms before choosing the final one. <b>This ensures stability based on your solutions.</b>`,
+                `Pre-screen all apps and test different RPA platforms before choosing the final one. <b>This ensures stability.</b>`,
                 `Define an <b>Infrastructure as a Service (IaaS)</b> in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.). <i>Robots running in VMs are less prone to errors due to hardware changes. Also, they can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</i>`,
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
@@ -15,9 +15,9 @@ let data = [{
                 `Bot should try multiple attempts per action if something didn't work as expected. Ideally, a delay of 500ms should be set and should be configurable.`,
                 `Bots should have a try catch logic, if there is an issue, it must notify the team to react, not to stopped the full process and carry on with the next task to process.`,
                 `<b>Avoid manipulating Citrix, Remote Desktops or VMs from other PCs.</b> This reduces the performance and accuracy.`,
-                `Track inline actions of each robot.`,
+                `Track inline actions of each robot.`,                
                 `Use Image Recognition or Coordinates as the last resources. They tend to be highly inaccurate.`,
-                `Use the Recorders only for small pieces of the automations. Don't automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.`,
+                `Use the Recorders only for small pieces. Do not automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.`,
                 `Create backups (clones) of the final production version of the RPA. This one would be useful if there is any disruption in the service and can be easily start.`
             ]
         }]
@@ -29,7 +29,7 @@ let data = [{
             "title": "",
             "content": [
                 `Identify <b>Low hanging fruits</b> and <b>Quick wins</b> for the first steps. Later, work in the Must-do Improvements and Long-term Improvements (<a href="https://www.uipath.com/rpa/academy/training">more info</a>).`,
-                `3rd party websites must be pre-screened. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.`,
+                `Pre-screen 3rd party websites. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.`,
                 `Define an owner for every application, in order to contact in case of any issue or query.`,
                 `Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.`,
                 `Collect all information where the process was running, <b>Region</b> (Poland, the USA, Spain, Germany, etc.), Language, <b>List Separator (, or ;)</b>, <b>Decimal separator (. or ,)</b>, CPU, RAM, etc.`,
@@ -38,8 +38,8 @@ let data = [{
                 `Investigate if any app, website or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
                 `Do not consider projects where there are connectivity issues or multiple networks. Most RPA solutions cannot work offline. They have a requirement of constantly validating its license.`,
                 `Define and get approvals for Test, UAT and Production environment for all tools in advance. Ensure these tools look the same and have the same IDs to avoid unnecessary reconfigurations when they are moved to Production. <i>SAP, for example, can have different IDs for the same controls in Prod and Test.</i>`,
-                `Projects that require VPN with <b>soft tokens (digital in the PCs/VMs)</b> should be considered on the medium term.`,
-                `Projects that require VPN with <b>hard or mobile tokens</b> should be considered as long-term improvements.`
+                `Consider projects that require VPN with <b>soft tokens (digital in the PCs/VMs) or MFAs</b> as the medium-term developments.`,
+                `Consider projects that require VPN with <b>hard or mobile tokens</b> as long-term improvements.`
             ]
         }]
     },
@@ -134,11 +134,11 @@ let data = [{
                         <i>WorkFlows cannot be scheduled from the Control Room.</i>
                     </li>
                     </ul>`,
-                    `Dictionaries (Key, Value) in AA11.3+ must be predefined, they cannot be extended in real time.`,
+                    `Predefine Dictionaries (Key, Value) in AA11.3+ structure. They cannot be modified during runtime.`,
                     `For On-Premises automations. There should be one accessible user with Admin Rights. From time to time, any service can stop either in the PC/VM or the Control Room and they must be restarted manually.
                     <ul>
                     <li>
-                        <i>Check the Task Scheduler to verify if all AA services are running.</i>
+                        <i><b>Tip.</b> Check the Task Scheduler to verify if all AA services are running.</i>
                     </li>
                     </ul>`
                 ]
@@ -154,9 +154,9 @@ let data = [{
                     `The resolution must be exactly the same in Test, UAT and Production.`,
                     `Run all apps in <b>maximized (full screen)</b> for the best performace.`,
                     `Close all apps ran by the bot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
-                    `Don't run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`,
+                    `Do not run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`,
                     `Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.`,
-                    `Dropdowns should be access through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to change.`
+                    `Access dropdowns through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to change.`
                 ]
             },
             {
@@ -169,8 +169,8 @@ let data = [{
             {
                 "title": "Java",
                 "content": [
-                    `In the case of UiPath. Install its <a href="https://docs.uipath.com/studio/docs/java-extension" target="_blank" target="_blank">Java Access Bridge for custom JRE</a>. This is only compatible with AWT apps (e.g. Java Swing, Oracle Forms, Fujitsu JBK).</i>`,
-                    `In the case of Automation Anywhere. Follow this <a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/bot-creator/customizing-an-automation-client/using-java-settings.html" target="_blank">tutorial</a>.`,
+                    `In the case of <i>UiPath</i>. Install its <a href="https://docs.uipath.com/studio/docs/java-extension" target="_blank" target="_blank">Java Access Bridge for custom JRE</a>. This is only compatible with AWT apps (e.g. Java Swing, Oracle Forms, Fujitsu JBK).</i>`,
+                    `In the case of <i>Automation Anywhere</i>. Follow this <a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/bot-creator/customizing-an-automation-client/using-java-settings.html" target="_blank">tutorial</a>.`,
                 ]
             }
         ]
@@ -182,19 +182,20 @@ let data = [{
             "title": "General",
             "content": [
                 `Use IDs for identifying controls.`,
-                `All controls from internal websites must have IDs. The lack of them can create inaccuracies.`,
-                `Selects must be access through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to adapt.`
+                `Ensure all internal websites have IDs in the required controls (buttons, inputs, etc.). The lack of them can create inaccuracies.`,
+                `Access <i>selects</i> through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to adapt.`
             ]
         },{
             "title": `<a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a>`,
             "content": [
-                `If you have access to the source code set <i><b>ClientIDMode="Static"</b></i> in all controls in ASP.NET 4+. <i>If you have a lower version, you might need to Map all possible IDs in a database and loop through them to test all possibilities. If there is an exception, this should be immediately notified to the support team via e-mail or SMS.</i>`
+                `If you have access to the source code. Set <i><b>ClientIDMode="Static"</b></i> in all controls in ASP.NET 4+.
+                <ul><li><i>If you have a lower version, you might need to Map all possible IDs in a database. Loop through them and test all possibilities. If there is any exception, this needs to be notified immediately.</i></li></ul>`
             ]
         }]
     },
     {
         "section": "Excels processing",
-        "notes": [`Large and complex Excels should be procesed by non-RPA services. RPAs tend to be quite slow and can take considerable time. An option is to write a console app with <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a>.`],
+        "notes": [`It's advisable to process large and/or complex Excels by non-RPA solutions. RPAs tend to be quite slow and can take considerable amounts of time. An option is to write a console app with <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a>.`],
         "practices": [{
             "title": "Automation Anywhere",
             "content": [
@@ -208,8 +209,8 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Only if there is a requirement from the client, Macros logic should be switched to RPA logic.`,
-                `Average execution times must be documented. This allows to kill any Macro in the middle of a long process.`,
+                `Do not switch Macros Logic to RPAs Logic. Consider this situation only in extreme cases or on-demand. `,
+                `Document average execution times. This avoids to kill any Macro in the middle of a long process.`,
                 `Remove all <b>Dialogs</b> (<a href="https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/msgbox-function" target="_blank">MsgBox</a> or <a href="https://docs.microsoft.com/en-us/office/vba/api/excel.application.inputbox" target="_blank">InputBox</a>). They can break the RPAs in most of the cases. If they are mandatory, you must implement new logic. You can write it in RPAs, databases, external files, etc.`
             ]
         }]
@@ -220,14 +221,13 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `General mailboxes and Robots' PCs/VMs should have non-expiring passwords. If the client doesn't agree, preconfigure a Robot to send a reminder and document all this information.`,
-                `Any process that involves Multi-Factor Authentication shouldn't be consider in the beginning. You might need to reach agreements to remove it for robo-users.`,
+                `Create a policy that general mailboxes and Robots' PCs/VMs should have non-expiring passwords. If it's impossible, preconfigure a bot to send a reminder and document this situation.`,
                 `Use the credential vault manager of the RPA solutions by default.`,
-                `In the case of .NET solutions, use the <i>app.config or web.config</i> encrypted. You can keep a backup copy unencrypted for testing purposes.`,
-                `In the case of Java apps, store the data in the <i>web.xml, .configuration, AppConfig.xml</i>, etc.`,
+                `In the case of .NET solutions. Use the <i>app.config or web.config</i> encrypted. You can keep a backup copy unencrypted for testing purposes.`,
+                `In the case of Java apps. Store the data in the <i>web.xml, .configuration, AppConfig.xml</i>, etc.`,
                 `Ensure no passwords are stored in logs or displayed in GUIs.`,
                 `Identify all apps that need authentication and ensure the re-login time is assessed.`,
-                `If an app becomes unresponsive (check task scheduler) after certain time when it's trying to login. Notify the team immediately.`
+                `Notify the team immediately if any app becomes unresponsive while login after some time (check in the Task Scheduler if it's actually unresponsive). `
             ]
         }]
     },
@@ -253,7 +253,7 @@ let data = [{
         },{
             "title": "Scanned documents",
             "content": [
-                `PDFs or Word documents must be transformed into <b>TIFF</b>. This ensures no metadata corrupts their processing. <i>In the case of .NET developments, you can use <a href="https://github.com/dlemstra/Magick.NET" target="_blank">ImageMagick.NET</a> with <a href="https://www.ghostscript.com/">GhostScript</a></i>.`,
+                `Transform all PDFs or Word documents to <b>TIFF</b>. This ensures no metadata corrupts their processing in IQ Bots (AA, for instance). <i>In the case of .NET developments, you can use <a href="https://github.com/dlemstra/Magick.NET" target="_blank">ImageMagick.NET</a> with <a href="https://www.ghostscript.com/">GhostScript</a></i>.`,
                 `Identify all documents that could be encrypted and decrypt in advance. You could partially automate this task with <a href="http://qpdf.sourceforge.net" target="_blank">QPDF</a>.`
             ]
         }]
@@ -264,9 +264,8 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Logs should contain all actions performed including errors, CPU consumption, etc.</li>
-                <li>
-                Define a logic for the logs (<a href="logsTemplate.db">template</a> in SQLite), for example:
+                `Store all actions performed by the RPA, including errors, the CPU consumption, etc.`,
+                `Define a logic for the logs (<a href="logsTemplate.db">template</a> in SQLite), for example:
                 <table class="table">
                     <tr>
                     <thead>
@@ -294,7 +293,7 @@ let data = [{
                     </thead>
                     </tr>
                 </table>`,
-                `Minimal status: Running, Finished and Stopped`
+                `Consider this as the minimal status: <i>Running, Finished and Stopped</i>.`
             ]
         }]
     },
@@ -304,9 +303,12 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Send an e-mail at the beginning of each bot.`,
-                `Send an e-mail each time a robot finished.`,
-                `Send an e-mail to the manager at the end of the day with the performance results (SLAs).`,
+                `Send the following e-mails:
+                <ol>
+                    <li>Each time a robot started.</li>
+                    <li>Each time a robot finished.</li>
+                    <li>To the manager at the end of the day with the performance results (SLAs).</li>
+                </ol>`,
                 `Ensure that only authorized e-mails receive the notification (mainly company's domain).`,
                 `Create an asynchronous task can be set in the Task Scheduler in order to monitor if the RPA is working. If the RPA solution stopped, it should send a notification by itself.
                 <ul>
@@ -325,7 +327,7 @@ let data = [{
                 `Use SAP recognition controls provided by the RPAs as the default option when they're available.`,
                 `Map 3 kernels maximum per PC/VM. More Kernels can bring slowness in the login.`,
                 `Use the "Find" option to search by field name. In this way, the field will always appear on the top of the table.`,
-                `If you require SAP downloads, you can consider to use SAP layout creation. This allows you to create a list of columns to be downloaded.`
+                `Consider to use SAP layout creation, if you require any SAP download. This allows you to create a list of columns to be downloaded.`
             ]
         }]
     },
@@ -335,7 +337,7 @@ let data = [{
         "practices": [{
             "title": "UiPath",
             "content": [
-                `Use <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa" target="_blank">Computer Vision</a> to identify controls based on patterns.`
+                `Use <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa" target="_blank">Computer Vision</a> to identify controls based on patterns. This solution is more stable that identifying images or typical OCRs.`
             ]
         }]
     }
