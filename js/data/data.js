@@ -213,7 +213,7 @@ let data = [{
     },
     {
         "section": "Websites",
-        "notes": [`* <i>Unclickable links could mean JavaScript created links. Inspect the source code. If this is the case, a JS injection is required.</i>`,`* <i>Challenging situations can be refactored in small projects with <a href="https://www.selenium.dev/" target="_blank">Selenium</a>.</i>`],
+        "notes": [`<i>Unclickable links could mean JavaScript created links. Inspect the source code. If this is the case, a JS injection is required.</i>`,`<i>Challenging situations can be refactored in small projects with <a href="https://www.selenium.dev/" target="_blank">Selenium</a>.</i>`],
         "practices": [{
             "title": "",
             "content": [
@@ -226,7 +226,7 @@ let data = [{
     },
     {
         "section": "Excels processing",
-        "notes": [`* Large and complex Excels should be procesed by non-RPA services. RPAs tend to be quite slow and can take considerable time. An option is to write a console app with <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a>.`],
+        "notes": [`Large and complex Excels should be procesed by non-RPA services. RPAs tend to be quite slow and can take considerable time. An option is to write a console app with <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a>.`],
         "practices": [{
             "title": "Automation Anywhere",
             "content": [
@@ -326,9 +326,9 @@ let data = [{
         "section": "Citrix, Remote Desktops or Virtual Machines",
         "notes": [],
         "practices": [{
-            "title": "",
+            "title": "UiPath",
             "content": [
-                `Some solutions like UiPath have specialized services for detecting controls based on patterns. It's called AI <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa" target="_blank">Computer Vision</a>.`
+                `Use <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa" target="_blank">Computer Vision</a> to identify controls based on patterns.`
             ]
         }]
     }
