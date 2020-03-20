@@ -168,7 +168,7 @@ let data = [{
                 "title": "Microsoft technologies (Windows Forms, UWP and WPF)",
                 "content": [
                     `Use <b>MetaBots</b> in <b>Automation Anywhere 10 or 11</b> for automating <b>WPF/UWP</b> apps. <i>There is no alternative for A2019 at this point of time (Mar 2020).</i>`,
-                    `Non-3rd party <a href="https://3.bp.blogspot.com/-eqX4iRh0JdE/UKdJJFzFbII/AAAAAAAAATQ/toLEV8RoSXI/s1600/WPFDynamicTab.png" target="_blank">Tabbed <b>WPF</b> apps</a> must be re-written. All tabs must be visible always, even if it is only one. If you ignore this, the content inside of the tab is going to inaccessible by the RPAs (until you open a new tab).`
+                    `Advisable, re-write non-3rd party <a href="https://3.bp.blogspot.com/-eqX4iRh0JdE/UKdJJFzFbII/AAAAAAAAATQ/toLEV8RoSXI/s1600/WPFDynamicTab.png" target="_blank">Tabbed <b>WPF</b> apps</a>. All tabs must be visible always, even if it is only one. If you ignore this, the content inside of the tab is going to inaccessible by the RPAs (until you open a new tab).`
                 ]
             },
             {
