@@ -13,8 +13,8 @@ let data = [{
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
                 `Configure the <b>Region</b> (Poland, the USA, Gemany, etc.) of the robot VM based on the process to automate.`,
-                `Split the bots in small tasks that could be reused. This allows scalability and multi-bot per PC/VM.`,
-                `Store <b>Master data</b> in Excels or Databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the bots.</b>`,
+                `Split the robots in small tasks that could be reused. This allows scalability and multi-robot per PC/VM.`,
+                `Store <b>Master data</b> in Excels or Databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the robots.</b>`,
                 `Set a delay of 500ms between each action. This should be configurable.`,
                 `Define a <i>try...catch</i> logic for all RPAs. This allows the next task to be processed. If there is a severe issue, send a notification.`,
                 `Try multiple attempts if any <b>action</b> failed (3 to 5).`,
@@ -56,15 +56,13 @@ let data = [{
     },
     {
         "section": "Infrastructure",
-        "notes": [],
+        "notes": [`Suggested providers: Azure, AWS and Google Cloud.`],
         "practices": [{
             "title": "Cloud",
             "content": [
-                `Suggested basic infrastructure:
-            <ul>
-            <li>
-                One VM for the <b>Command Center App</b>.
+                `Advised basic infrastructure:
                 <table class="table">
+                    <caption style="caption-side: top!important;"><b>Command Center App</b> VM</caption>
                     <thead>
                         <tr>
                         <th>Processor</th>
@@ -82,10 +80,8 @@ let data = [{
                         </tr>
                     </tbody>
                 </table>
-            </li>
-            <li>
-                One VM for the <b>Command Center Database</b>.
                 <table class="table">
+                    <caption style="caption-side: top!important;"><b>Command Center Database</b> VM</caption>
                     <thead>
                         <tr>
                         <th>Processor</th>
@@ -102,9 +98,9 @@ let data = [{
                         <td>10 GbE</td>
                         </tr>
                     </tbody>
-                </table>`,
-                `One <b>template</b> VM for the <b>bot PC</b>. <i>This one would be replicated to all new bots.</i>
+                </table>
                 <table class="table">
+                    <caption style="caption-side: top!important;"><b>Template VM for the <b>robots</b></caption>
                     <thead>
                         <tr>
                         <th>Processor</th>
@@ -121,9 +117,7 @@ let data = [{
                         <td>1 GbE</td>
                         </tr>
                     </tbody>
-                </table>
-            </ul>`,
-            `Suggested providers: Azure, AWS and Google Cloud.`
+                </table>`,
             ]
         }]
     },
@@ -164,7 +158,7 @@ let data = [{
                 "content": [
                     `The resolution must be exactly the same in Test, UAT and Production.`,
                     `Run all apps in <b>maximized (full screen)</b> for the best performace.`,
-                    `Close all apps ran by the bot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
+                    `Close all apps ran by the robot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
                     `Do not run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`,
                     `Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.`,
                     `Access dropdowns through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to change.`
@@ -232,7 +226,7 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Create a policy that general mailboxes and Robots' PCs/VMs should have non-expiring passwords. If it's impossible, preconfigure a bot to send a reminder and document this situation.`,
+                `Create a policy that general mailboxes and robots' PCs/VMs should have non-expiring passwords. If it's impossible, preconfigure a robot to send a reminder and document this situation.`,
                 `Use the credential vault manager of the RPA solutions by default.`,
                 `In the case of .NET solutions. Use the <i>app.config or web.config</i> encrypted. You can keep a backup copy unencrypted for testing purposes.`,
                 `In the case of Java apps. Store the data in the <i>web.xml, .configuration, AppConfig.xml</i>, etc.`,
