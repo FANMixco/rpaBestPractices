@@ -6,14 +6,18 @@ let data = [{
             "content": [
                 `Build a <a href="https://www.uipath.com/rpa/center-of-excellence" target="_blank">Center of Excellence (CoE)</a>. Generally, it's seen as an expensive expense and shouldn't be the case, it's more expensive when it's not implemented.`,
                 `Pre-screen all apps and test different RPA platforms before choosing the final one. <b>This ensures stability.</b>`,
-                `Define an <b>Infrastructure as a Service (IaaS)</b> in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.). <i>Robots running in VMs are less prone to errors due to hardware changes. Also, they can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</i>`,
+                `Define an <b>Infrastructure as a Service (IaaS)</b> in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.).
+                <ul>
+                <li>Robots running in VMs are less prone to errors due to hardware changes.</li>
+                <li>Also, they can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</li></ul>`,
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
                 `Configure the <b>Region</b> (Poland, the USA, Gemany, etc.) of the robot VM based on the process to automate.`,
-                `Try splitting the bots in small tasks that could be reused. This allows scalability and multi-bot per PC/VM.`,
-                `Master data should be stored in Excels or Databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the bots.</b>`,
-                `Bot should try multiple attempts per action if something didn't work as expected. Ideally, a delay of 500ms should be set and should be configurable.`,
-                `Bots should have a try catch logic, if there is an issue, it must notify the team to react, not to stopped the full process and carry on with the next task to process.`,
+                `Split the bots in small tasks that could be reused. This allows scalability and multi-bot per PC/VM.`,
+                `Store <b>Master data</b> in Excels or Databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the bots.</b>`,
+                `Set a delay of 500ms between each action. This should be configurable.`,
+                `Define a <i>try...catch</i> logic for all RPAs. This allows the next task to be processed. If there is a severe issue, send a notification.`,
+                `Try multiple attempts if any <b>action</b> failed (3 to 5).`,
                 `<b>Avoid manipulating Citrix, Remote Desktops or VMs from other PCs.</b> This reduces the performance and accuracy.`,
                 `Track inline actions of each robot.`,                
                 `Use Image Recognition or Coordinates as the last resources. They tend to be highly inaccurate.`,
@@ -32,14 +36,21 @@ let data = [{
                 `Pre-screen 3rd party websites. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.`,
                 `Define an owner for every application, in order to contact in case of any issue or query.`,
                 `Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.`,
-                `Collect all information where the process was running, <b>Region</b> (Poland, the USA, Spain, Germany, etc.), Language, <b>List Separator (, or ;)</b>, <b>Decimal separator (. or ,)</b>, CPU, RAM, etc.`,
+                `Collect all information where the process was running:
+                <ul>
+                <li><b>Region</b> (Poland, the USA, Spain, Germany, etc.)</li>
+                <li>Language (en-US, es-ES, en-UK, pl-PL, etc.)</li>
+                <li>List Separator <b>(, or ;)</b></li>
+                <li>Decimal separator <b>(. or ,)</b></li>
+                <li>CPU, RAM, etc.</li>
+                </ul>`,
                 `Identify if there is any <b>CSV</b> to process and what the <b>List Separator (, or ;)</b> is in the device. This must be the same for the robot.`,
                 `Document average execution time of all applications. If there is any historical data of any pick. It should be documented with its details.`,
                 `Investigate if any app, website or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
                 `Do not consider projects where there are connectivity issues or multiple networks. Most RPA solutions cannot work offline. They have a requirement of constantly validating its license.`,
                 `Define and get approvals for Test, UAT and Production environment for all tools in advance. Ensure these tools look the same and have the same IDs to avoid unnecessary reconfigurations when they are moved to Production. <i>SAP, for example, can have different IDs for the same controls in Prod and Test.</i>`,
-                `Consider projects that require VPN with <b>soft tokens (digital in the PCs/VMs) or MFAs</b> as the medium-term developments.`,
-                `Consider projects that require VPN with <b>hard or mobile tokens</b> as long-term improvements.`
+                `Consider projects that require VPN with <b>soft tokens (digital in the PCs/VMs)</b> as the medium-term developments.`,
+                `Consider projects that require VPN with <b>hard tokens or MFAs</b> as long-term improvements.`
             ]
         }]
     },
