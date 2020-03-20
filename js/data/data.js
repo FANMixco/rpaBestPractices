@@ -61,7 +61,7 @@ let data = [{
             "title": "Cloud",
             "content": [
                 `Advised basic infrastructure:
-                <table class="table">
+                <table class="table-responsive">
                     <caption style="caption-side: top!important;"><b>Command Center App</b> VM</caption>
                     <thead>
                         <tr>
@@ -80,7 +80,7 @@ let data = [{
                         </tr>
                     </tbody>
                 </table>
-                <table class="table">
+                <table class="table-responsive">
                     <caption style="caption-side: top!important;"><b>Command Center Database</b> VM</caption>
                     <thead>
                         <tr>
@@ -99,7 +99,7 @@ let data = [{
                         </tr>
                     </tbody>
                 </table>
-                <table class="table">
+                <table class="table-responsive">
                     <caption style="caption-side: top!important;"><b>Template VM for the <b>robots</b></caption>
                     <thead>
                         <tr>
