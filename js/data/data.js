@@ -5,11 +5,12 @@ let data = [{
             "title": "",
             "content": [
                 `Build a <a href="https://www.uipath.com/rpa/center-of-excellence" target="_blank">Center of Excellence (CoE)</a>. Generally, it's seen as an expensive expense and shouldn't be the case, it's more expensive when it's not implemented.`,
+                `All apps should be pre-screened and tested with different RPA platforms before choosing the final one. <b>This ensures stability based on your solutions.</b>`,
                 `Define an <b>Infrastructure as a Service (IaaS)</b> in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.). <i>Robots running in VMs are less prone to errors due to hardware changes. Also, they can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</i>`,
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
+                `Configure the <b>Region</b> (Poland, the USA, Gemany, etc.) of the robot VM based on the process to automate.`,
                 `Try splitting the bots in small tasks that could be reused. This allows scalability and multi-bot per PC.`,
-                `All apps should be pre-screened and tested with different RPA platforms before choosing the final one. <b>This ensures stability based on your solutions.</b>`,
                 `Master data should be stored in Excels or Databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the bots.</b>`,
                 `Bot should try multiple attempts per action if something didn't work as expected. Ideally, a delay of 500ms should be set and should be configurable.`,
                 `Bots should have a try catch logic, if there is an issue, it must notify the team to react, not to stopped the full process and carry on with the next task to process.`,
@@ -31,7 +32,8 @@ let data = [{
                 `3rd party websites must be pre-screened. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.`,
                 `Define an owner for every application, in order to contact in case of any issue or query.`,
                 `Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.`,
-                `Collect all information where the process was running, CPU, RAM, etc.`,
+                `Collect all information where the process was running, <b>Region</b> (Poland, the USA, Spain, Germany, etc.), Language, <b>List Separator (, or ;)</b>, <b>Decimal separator (. or ,)</b>, CPU, RAM, etc.`,
+                `Identify if there is any <b>CSV</b> to process and what the <b>List Separator (, or ;)</b> is in the device. This must be the same for the robot.`,
                 `Document average execution time of all applications. If there is any historical data of any pick. It should be documented with its details.`,
                 `Investigate if any app, website or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
                 `Do not consider projects where there are connectivity issues or multiple networks. Most RPA solutions cannot work offline. They have a requirement of constantly validating its license.`,
@@ -221,6 +223,16 @@ let data = [{
                 `For websites built on <b><a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a></b>. The IDs tend to be dynamic in most of the cases and this can impact the RPA. If you have access to the source code set <i><b>ClientIDMode="Static"</b></i> to all controls in ASP.NET 4+. <i>If you have a lower version, you might need to Map the possible IDs in a Database and Loop through them to test all possibilities. If there is an exception, this should be immediately notified to the support team via Email.</i>`,
                 `All controls from internal websites must have IDs. The lack of them can create inaccuracies.`,
                 `Selects must be accessible through their IDs. This information should be easy to modify from a database. Therefore, if there is any change, it would be faster to adapt.`
+            ]
+        }]
+    },
+    {
+        "section": "Excels processing",
+        "notes": [`* Large and complex Excels should be procesed by non-RPA services. RPAs tend to be quite slow and can take considerable time. An option is to write a console app with <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a>.`],
+        "practices": [{
+            "title": "Automation Anywhere",
+            "content": [
+                `Avoid reading multiple <i>Excels Sessions</i> at the same time in loops. Limit it to one per loop. <i>If you need a second Excel Session inside of a loop, consider using one as a <a href="https://rpaknowledge.com/automation-anywhere-database-command-excel/" target="_blank">database</a>.</i>`
             ]
         }]
     },
