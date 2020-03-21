@@ -152,7 +152,7 @@ let data = [{
     },
     {
         "section": "Desktop apps",
-        "notes": [`* Some tricky situations can be handled by <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa" target="_blank">Computer Vision</a> with UiPath.`],
+        "notes": [`Some unfindable controls can be partially access with UiPath's <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa" target="_blank">Computer Vision</a>.`],
         "practices": [{
                 "title": "General",
                 "content": [
