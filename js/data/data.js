@@ -9,14 +9,15 @@ let data = [{
                 `Define an <b>Infrastructure as a Service (IaaS)</b> in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.).
                 <ul>
                 <li>Robots running in VMs are less prone to errors due to hardware changes.</li>
-                <li>Also, they can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</li></ul>`,
+                <li>Robots can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</li></ul>`,
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
                 `Configure the <b>Region</b> (Poland, the USA, Gemany, etc.) of the robot VM based on the process to automate.`,
                 `Split the robots in small tasks that could be reused. This allows scalability and multi-robot per PC/VM.`,
-                `Store <b>Master data</b> in Excels or Databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the robots.</b>`,
-                `Set a delay of 500ms between each action. This should be configurable.`,
-                `Define a <i>try...catch</i> logic for all RPAs. This allows the next task to be processed. If there is a severe issue, send a notification.`,
+                `Store <b>Master data</b> in Excels or databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the robots.</b>`,
+                `Set a delay of 500ms between each action. This should be configurable from a DB.`,
+                `Define a <i>try…catch</i> logic for all steps in the RPAs.
+                <ul><li>This allows the next task to be processed for minor problems.</li><li>For severe issues or bots stuck for too long (3 full attempts), send a notification.</li></ul>`,
                 `Try multiple attempts if any <b>action</b> failed (3 to 5).`,
                 `<b>Avoid manipulating Citrix, Remote Desktops or VMs from other PCs.</b> This reduces the performance and accuracy.`,
                 `Track inline actions of each robot.`,                
@@ -142,14 +143,20 @@ let data = [{
                     `Limit the usage of <b>WorkFlows</b> or <b>MetaBots</b>. None of them is supported in A2019.
                     <ul>
                     <li>
-                        <i>WorkFlows cannot be scheduled from the Control Room.</i>
+                    <b>⚠️ Warning.</b> WorkFlows cannot be scheduled in the Control Room.
                     </li>
                     </ul>`,
-                    `Predefine Dictionaries (Key, Value) in AA11.3+ structure. They cannot be modified during runtime.`,
-                    `For On-Premises automations. There should be one accessible user with Admin Rights. From time to time, any service can stop either in the PC/VM or the Control Room and they must be restarted manually.
+                    `Predefine all Dictionaries' keys while creating the robot (AA11.3+).<ul>
+                    <li>
+                    <b>⚠️ Warning.</b>They cannot be modified during runtime.</li>
+                    </ul>`,
+                    `Define at least, one user with full <b>Admin Rights</b>.
                     <ul>
                     <li>
-                        <i><b>Tip.</b> Check the Task Scheduler to verify if all AA services are running.</i>
+                    Seldomly, any service can stop either in the robot's PC/VM or the Control Room, and they must be restarted manually.
+                    </i>
+                    <li>
+                        <b>💡Tip.</b> Check the <i>Task Manager (Ctrl+Alt+Del)</i> and verify if all AA services are running.
                     </li>
                     </ul>`
                 ]
@@ -173,15 +180,17 @@ let data = [{
             {
                 "title": "Microsoft technologies (Windows Forms, UWP and WPF)",
                 "content": [
-                    `Use <b>MetaBots</b> in <b>Automation Anywhere 10 or 11</b> for automating <b>WPF/UWP</b> apps. <i>There is no alternative for A2019 at this point of time (Mar 2020).</i>`,
-                    `Advisable, re-write non-3rd party <a href="https://3.bp.blogspot.com/-eqX4iRh0JdE/UKdJJFzFbII/AAAAAAAAATQ/toLEV8RoSXI/s1600/WPFDynamicTab.png" target="_blank">Tabbed <b>WPF</b> apps</a>. All tabs must be visible always, even if it is only one. If you ignore this, the content inside of the tab is going to inaccessible by the RPAs (until you open a new tab).`
+                    `Use <b><a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/metabots/getting-started/understanding-metabot-designer.html" target="_blank">MetaBots</a></b> in <b>Automation Anywhere 10 or 11</b> for automating <b>WPF/UWP</b> apps.
+                        <ul><li><b>⚠️ Warning.</b> There is no alternative for A2019, at this point in time (Mar 2020).</li></ul>`,
+                    `Advisable, re-write non-3rd party <a href="https://3.bp.blogspot.com/-eqX4iRh0JdE/UKdJJFzFbII/AAAAAAAAATQ/toLEV8RoSXI/s1600/WPFDynamicTab.png" target="_blank">Tabbed <b>WPF</b> apps</a>. All tabs must be visible always, even if it is only one.
+                    <ul><li><b>⚠️ Warning.</b> If you ignore this, the content inside of the tab is going to inaccessible by the RPAs (until you open a new tab).</li></ul>`
                 ]
             },
             {
                 "title": "Java",
                 "content": [
-                    `In the case of <i>UiPath</i>. Install its <a href="https://docs.uipath.com/studio/docs/java-extension" target="_blank" target="_blank">Java Access Bridge for custom JRE</a>. This is only compatible with AWT apps (e.g. Java Swing, Oracle Forms, Fujitsu JBK).</i>`,
-                    `In the case of <i>Automation Anywhere</i>. Follow this <a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/bot-creator/customizing-an-automation-client/using-java-settings.html" target="_blank">tutorial</a>.`,
+                    `In the case of <b>UiPath</b>. Install its <a href="https://docs.uipath.com/studio/docs/java-extension" target="_blank" target="_blank">Java Access Bridge for custom JRE</a>. This is only compatible with AWT apps (e.g. Java Swing, Oracle Forms, Fujitsu JBK).</i>`,
+                    `In the case of <b>Automation Anywhere</b>. Follow this <a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/bot-creator/customizing-an-automation-client/using-java-settings.html" target="_blank">tutorial</a>.`,
                 ]
             }
         ]
@@ -199,8 +208,12 @@ let data = [{
         },{
             "title": `<a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a>`,
             "content": [
-                `If you have access to the source code. Set <i><b>ClientIDMode="Static"</b></i> in all controls in ASP.NET 4+.
-                <ul><li><i>If you have a lower version, you might need to Map all possible IDs in a database. Loop through them and test all possibilities. If there is any exception, this needs to be notified immediately.</i></li></ul>`
+                `If you have access to the source code. Set <i><b>ClientIDMode="Static"</b></i> in all controls in ASP.NET 4+.<br>
+                <b>⚠️ Warning.</b> For lower versions. You have two options:
+                <ol>
+                <li>Create a JavaScript script that alters its behaviour and reassigns all IDs.</li>                
+                <li>Map all possible IDs in a database. Loop through them and test all possibilities. If there is any exception, notify immediately, investigate and add it to the DB.</li>
+                </ol>`
             ]
         }]
     },
