@@ -4,7 +4,7 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Build a <a href="https://www.uipath.com/rpa/center-of-excellence" target="_blank">Center of Excellence (CoE)</a>. Generally, it's seen as an expensive expense and shouldn't be the case, it's more expensive when it's not implemented.`,
+                `Build a <a href="https://www.uipath.com/rpa/center-of-excellence" target="_blank">Center of Excellence (CoE)</a>.<ul><li><b>⚠️ Warning.</b> It's typically considered a high-cost, but it's exceedingly expensive when it's unimplemented from the beginning.</li></ul>`,
                 `Pre-screen all apps and test different RPA platforms before choosing the final one. <b>This ensures stability.</b>`,
                 `Define an <b>Infrastructure as a Service (IaaS)</b> in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.).
                 <ul>
@@ -12,15 +12,15 @@ let data = [{
                 <li>Robots can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</li></ul>`,
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
-                `Configure the <b>Region</b> (Poland, the USA, Gemany, etc.) of the robot VM based on the process to automate.`,
+                `Configure the <b>Region</b> (Poland, the USA, Germany, etc.) of the robot's VM as it was in the original process's PC.`,
                 `Split the robots in small tasks that could be reused. This allows scalability and multi-robot per PC/VM.`,
                 `Store <b>Master data</b> in Excels or databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the robots.</b>`,
+                `Track inline actions of each robot, storing them in a log.`,
                 `Set a delay of 500ms between each action. This should be configurable from a DB.`,
                 `Define a <i>try…catch</i> logic for all steps in the RPAs.
-                <ul><li>This allows the next task to be processed for minor problems.</li><li>For severe issues or bots stuck for too long (3 full attempts), send a notification.</li></ul>`,
-                `Try multiple attempts if any <b>action</b> failed (3 to 5).`,
+                <ul><li>This allows the next task to be processed for minor problems. Remember to log it.</li><li>For severe issues or stucked robots (after 3 full attempts), send a notification.</li></ul>`,
+                `Try multiple attempts if any <b>action</b> failed (3 to 5) before going to the next step or full attempt.`,
                 `<b>Avoid manipulating Citrix, Remote Desktops or VMs from other PCs.</b> This reduces the performance and accuracy.`,
-                `Track inline actions of each robot.`,                
                 `Use Image Recognition or Coordinates as the last resources. They tend to be highly inaccurate.`,
                 `Use the Recorders only for small pieces. Do not automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.`,
                 `Create backups (clones) of the final production version of the RPA. This one would be useful if there is any disruption in the service and can be easily start.`
@@ -33,8 +33,8 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Identify <b>Low hanging fruits</b> and <b>Quick wins</b> for the first steps. Later, work in the Must-do Improvements and Long-term Improvements (<a href="https://www.uipath.com/rpa/academy/training">more info</a>).`,
-                `Pre-screen 3rd party websites. Some websites have some regulations that block automations. Until, the full contract has been carefully read, no agreement should be reached.`,
+                `Identify <b>Low hanging fruits</b> and <b>Quick wins</b> for the first steps. Later, work in the <b>Must-do Improvements</b> and <b>Long-term Improvements</b> (<a href="https://www.uipath.com/rpa/academy/training">more info</a>).`,
+                `Pre-screen 3rd party websites.<ul><li><b>⚠️ Warning.</b> Some websites have some regulations that block automations. Read them carefully. One example is <a href="https://www.linkedin.com/legal/user-agreement?trk=hb_ft_userag#dos" target="_blank">LinkedIn</a>.</li></ul>`,
                 `Define an owner for every application, in order to contact in case of any issue or query.`,
                 `Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.`,
                 `Collect all information where the process was running:
@@ -50,8 +50,11 @@ let data = [{
                 `Investigate if any app, website or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
                 `Do not consider projects where there are connectivity issues or multiple networks. Most RPA solutions cannot work offline. They have a requirement of constantly validating its license.`,
                 `Define and get approvals for Test, UAT and Production environment for all tools in advance. Ensure these tools look the same and have the same IDs to avoid unnecessary reconfigurations when they are moved to Production. <i>SAP, for example, can have different IDs for the same controls in Prod and Test.</i>`,
-                `Consider projects that require VPN with <b>soft tokens (digital in the PCs/VMs)</b> as the medium-term developments.`,
-                `Consider projects that require VPN with <b>hard tokens or MFAs</b> as long-term improvements.`
+                `For projects that require VPNs:
+                <ul>
+                <li><b>Soft tokens</b> (apps installed in the PCs/VMs) should be considered as the medium-term developments.</li>
+                <li><a href="https://assets.infosecurity-magazine.com/content/float/61e15d2b-465a-472c-9f0e-16091b40beef.jpg" target="_blank">Hard tokens</a></b> or <b><span data-toggle="tooltip" title="Multi-factor Authentication">MFAs</span></b> should be considered as Long-term Improvements.</li>
+                </ul>`
             ]
         }]
     },
@@ -146,9 +149,9 @@ let data = [{
                     <b>⚠️ Warning.</b> WorkFlows cannot be scheduled in the Control Room.
                     </li>
                     </ul>`,
-                    `Predefine all Dictionaries' keys while creating the robot (AA11.3+).<ul>
+                    `In AA11.3+. Predefine all Dictionaries' Keys while creating the robot.<ul>
                     <li>
-                    <b>⚠️ Warning.</b>They cannot be modified during runtime.</li>
+                    <b>⚠️ Warning.</b> You cannot add new Keys on Runtime.</li>
                     </ul>`,
                     `Define at least, one user with full <b>Admin Rights</b>.
                     <ul>

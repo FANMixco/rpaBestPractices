@@ -85,6 +85,7 @@ $(function(){
     
     $("#accordionRPA").append(contactIFrame);
     $("#accordionRPA").append(commentsIFrame);
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
 String.prototype.format = function() {
