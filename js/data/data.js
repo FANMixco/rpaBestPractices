@@ -12,7 +12,9 @@ let data = [{
                 <li>Robots can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</li></ul>`,
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
-                `Configure the <b>Region</b> (Poland, the USA, Germany, etc.) of the robot's VM as it was in the original process's PC.`,
+                `Configure the <b>Region</b> (Poland, the USA, Germany, etc.) of the robot's VM/PC as it was in the original process's PC. The same applies to certain software like <b>SAP</b>.<ul>
+                <li>
+                <b>⚠️ Warning.</b> If this is different, it can cause serious troubles.</li></ul>`,
                 `Split the robots in small tasks that could be reused. This allows scalability and multi-robot per PC/VM.`,
                 `Store <b>Master data</b> in Excels or databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the robots.</b>`,
                 `Track inline actions of each robot, storing them in a log.`,
