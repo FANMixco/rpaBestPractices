@@ -25,7 +25,8 @@ let data = [{
                 `<b>Avoid manipulating Citrix, Remote Desktops or VMs from other PCs.</b> This reduces the performance and accuracy.`,
                 `Use Image Recognition or Coordinates as the last resources. They tend to be highly inaccurate.`,
                 `Use the Recorders only for small pieces. Do not automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.`,
-                `Create backups (clones) of the final production version of the RPA. This one would be useful if there is any disruption in the service and can be easily start.`
+                `Create backups (clones) of the final production version of the RPA. This one would be useful if there is any disruption in the service and can be easily start.`,
+                `Use a dashboard to monitor all RPAs. If they are working, paused, stopped, failed, etc. It can be the default of the chosen platform.`
             ]
         }]
     },
