@@ -170,7 +170,7 @@ let data = [{
     },
     {
         "section": "Desktop apps",
-        "notes": [`Some unfindable controls can be partially access with UiPath's <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa" target="_blank">Computer Vision</a>.`],
+        "notes": [`Some unfindable controls can be partially access with UiPath's <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa" target="_blank">Computer Vision</a>.`, `<a href="https://upload.wikimedia.org/wikipedia/commons/e/ec/Example_of_a_ribbon_%28user_interface_element%29.png" target="_blank">Ribboned Apps</a> can cause <a href="https://stackoverflow.com/questions/56128748/ui-automation-ribbon-control-and-automation-anywhere-11-in-wpf" target="_blank">multiple issues</a>. Only the last tab can be recognized properly by most of the RPAs. Check them in advance since Image Recognition might be your only option.`],
         "practices": [{
                 "title": "General",
                 "content": [
