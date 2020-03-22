@@ -35,6 +35,7 @@
       <div class="container">
          <div class="title">
             <h1>🤖 RPA Best Practices</h1>
+            <div id="google_translate_element"></div>
          </div>
          <div class="accordion" id="accordionRPA"></div>
       </div>
@@ -54,6 +55,11 @@
          gtag('js', new Date());
 
          gtag('config', 'UA-7438484-13');
+
+         function googleTranslateElementInit() {
+           new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es,nl,de,fr,it,en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+         }
       </script>
+      <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
    </body>
 </html>
