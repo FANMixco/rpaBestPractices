@@ -185,8 +185,8 @@ let data = [{
             {
                 "title": "Microsoft technologies (Windows Forms, UWP and WPF)",
                 "content": [
-                    `Use <b><a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/metabots/getting-started/understanding-metabot-designer.html" target="_blank">MetaBots</a></b> in <b>Automation Anywhere 10 or 11</b> for automating <b>WPF/UWP</b> apps.
-                        <ul><li><b>⚠️ Warning.</b> There is no alternative for A2019, at this point in time (Mar 2020).</li></ul>`,
+                    `Use <b><a href="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-client/metabots/getting-started/understanding-metabot-designer.html" target="_blank">MetaBots</a></b> in <b>Automation Anywhere 10 or 11</b> for automating <b>WPF/UWP</b> apps efficiently. A common example are <a href="https://upload.wikimedia.org/wikipedia/commons/e/ec/Example_of_a_ribbon_%28user_interface_element%29.png" target="_blank">Ribboned Apps</a>.
+                        <ul><li><b>⚠️ Warning.</b> There is no alternative for A2019, at this point in time (Mar 2020). Image Recognition is your only option if you have any app of this kind.</li></ul>`,
                     `Advisable, re-write non-3rd party <a href="https://3.bp.blogspot.com/-eqX4iRh0JdE/UKdJJFzFbII/AAAAAAAAATQ/toLEV8RoSXI/s1600/WPFDynamicTab.png" target="_blank">Tabbed <b>WPF</b> apps</a>. All tabs must be visible always, even if it is only one.
                     <ul><li><b>⚠️ Warning.</b> If you ignore this, the content inside of the tab is going to inaccessible by the RPAs (until you open a new tab).</li></ul>`
                 ]
