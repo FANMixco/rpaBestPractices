@@ -157,7 +157,7 @@ let data = [{
                     <ul>
                     <li>
                     Seldomly, any service can stop either in the robot's PC/VM or the Control Room, and they must be restarted manually.
-                    </i>
+                    </li>
                     <li>
                         <b>💡Tip.</b> Check the <i>Task Manager (Ctrl+Alt+Del)</i> and verify if all AA services are running.
                     </li>
@@ -248,13 +248,14 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Create a policy that general mailboxes and robots' PCs/VMs should have non-expiring passwords. If it's impossible, preconfigure a robot to send a reminder and document this situation.`,
+                `Create a policy for General Mailboxes and robots' PCs/VMs of non-expiring passwords.<ul><li>
+                <b>💡Tip.</b> If it's impossible, preconfigure a robot that sends a reminder and document this situation.</li></ul>`,
                 `Use the credential vault manager of the RPA solutions by default.`,
-                `In the case of .NET solutions. Use the <i>app.config or web.config</i> encrypted. You can keep a backup copy unencrypted for testing purposes.`,
+                `In the case of .NET solutions. Use the <i>app.config or web.config</i> encrypted.`,
                 `In the case of Java apps. Store the data in the <i>web.xml, .configuration, AppConfig.xml</i>, etc.`,
                 `Ensure no passwords are stored in logs or displayed in GUIs.`,
                 `Identify all apps that need authentication and ensure the re-login time is assessed.`,
-                `Notify the team immediately if any app becomes unresponsive while login after some time (check in the Task Scheduler if it's actually unresponsive). `
+                `Notify the team immediately if any app becomes unresponsive while login after some time (check in the Task Manager if it's actually unresponsive). `
             ]
         }]
     },
@@ -264,13 +265,13 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Document the volume of transactions for every process (daily, weekly, etc.). Many times, this is an over-seen point.`,
-                `Document the response time of the macros, websites, etc. This would help in the area of creating approximations for execution.`,
+                `Document the volume of transactions for every process (daily, weekly, etc.). Typically, it is an over-seen point.`,
+                `Document the response time of the macros, websites, etc. This helps create approximations of execution.`,
             ]
         }]
     },
     {
-        "section": "Documents processing",
+        "section": "Document processing",
         "notes": [],
         "practices": [{
             "title": "General",
@@ -280,8 +281,10 @@ let data = [{
         },{
             "title": "Scanned documents",
             "content": [
-                `Transform all PDFs or Word documents to <b>TIFF</b>. This ensures no metadata corrupts their processing in IQ Bots (AA, for instance). <i>In the case of .NET developments, you can use <a href="https://github.com/dlemstra/Magick.NET" target="_blank">ImageMagick.NET</a> with <a href="https://www.ghostscript.com/">GhostScript</a></i>.`,
-                `Identify all documents that could be encrypted and decrypt in advance. You could partially automate this task with <a href="http://qpdf.sourceforge.net" target="_blank">QPDF</a>.`
+                `Transform all PDFs or Word documents to <b>TIFF</b>. This ensures no metadata corrupts their processing (<a href="https://www.automationanywhere.com/products/iq-bot" target="_blank">IQ Bots</a> in AA, for instance).<ul><li>
+                <b>💡Tip.</b> In the case of .NET developments, you can do this with <a href="https://github.com/dlemstra/Magick.NET" target="_blank">ImageMagick.NET</a> and <a href="https://www.ghostscript.com/">GhostScript</a>.</li></ul>`,
+                `Identify all documents that could be encrypted and decrypt them in advance.<ul><li>
+                <b>💡Tip.</b> You could partially automate this task with <a href="http://qpdf.sourceforge.net" target="_blank">QPDF</a>.</li></ul>`
             ]
         }]
     },
