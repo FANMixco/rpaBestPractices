@@ -212,9 +212,9 @@ let data = [{
             "title": `<a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a>`,
             "content": [
                 `If you have access to the source code. Set <i><b>ClientIDMode="Static"</b></i> in all controls in ASP.NET 4+.<br>
-                <b>⚠️ Warning.</b> For lower versions. You have two options:
+                <b>⚠️ Warning.</b> For lower versions or lacking of source code. You have two options:
                 <ol>
-                <li>Create a JavaScript script that alters its behaviour and reassigns all IDs.</li>                
+                <li>Create a JavaScript script that alters its behavior and reassigns all IDs after it's fully loaded.</li>                
                 <li>Map all possible IDs in a database. Loop through them and test all possibilities. If there is any exception, notify immediately, investigate and add it to the DB.</li>
                 </ol>`
             ]
