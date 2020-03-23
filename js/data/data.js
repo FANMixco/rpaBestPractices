@@ -53,7 +53,7 @@ let data = [{
                 <li>CPU, RAM, etc.</li>
                 </ul>`,
                 `Record videos of the entire processes. <i>BRDs and complex documentations are not enough for the support team.</i>`,
-                `Create the flows of the process and double-check if they are repetitive.`,
+                `Create the flows of the processes and double-check if they are repetitive.`,
                 `Document in detailed the following points:
                 <ul>
                 <li>All known exceptions. You can create a special document for them.</li>
