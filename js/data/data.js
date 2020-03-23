@@ -27,7 +27,8 @@ let data = [{
                 `Use the Recorders only for small pieces. Do not automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.`,
                 `Create backups (clones) of the final production version of the RPA. This one would be useful if there is any disruption in the service and can be easily start.`,
                 `Use a dashboard to monitor all RPAs. If they are working, paused, stopped, failed, etc. It can be the default of the chosen platform.`,
-                `Create a Load Balancing Plan (one passive and one active RPA for the same process). This might need a special agreement with the RPA provider.`
+                `Create a Load Balancing Plan (one passive and one active RPA for the same process). This might need a special agreement with the RPA provider.`,
+                `Advisable, create a process that allows the robot to restart its work at a certain point when it failed or stopped.`
             ]
         }]
     },
@@ -53,8 +54,12 @@ let data = [{
                 </ul>`,
                 `Record videos of the entire processes. <i>BRDs and complex documentations are not enough for the support team.</i>`,
                 `Create the flows of the process and double-check if they are repetitive.`,
-                `Document all known exceptions. You can create a special document for them.`,
-                `Document average execution time of all applications. If there is any historical data of any pick. It should be documented with its details.`,
+                `Document in detailed the following points:
+                <ul>
+                <li>All known exceptions. You can create a special document for them.</li>
+                <li>Average execution time of all applications (macros, websites, etc.). If there is any historical data of any pick.</li>
+                <li>Volume of transactions for every process (daily, weekly, etc.). Typically, it is an over-seen point.</li>
+                </ul>`,
                 `Investigate if any app, website or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
                 `Do not consider projects where there are connectivity issues or multiple networks.<ul><li><b>⚠️ Warning.</b> Most RPA solutions cannot work offline. Also, they keep validating its license with the Command Center.</li></ul>`,
                 `Define and get approvals for Test, UAT and Production environments for all tools in advance.`,
@@ -274,8 +279,7 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Document the volume of transactions for every process (daily, weekly, etc.). Typically, it is an over-seen point.`,
-                `Document the response time of the macros, websites, etc. This helps create approximations of execution.`,
+                `Advisable, split the information/data to process in small parts. This ensures stability and allows the process to be restarted at a certain point easily. If for any reason the robot failed.`,
             ]
         }]
     },
@@ -333,7 +337,7 @@ let data = [{
                     </thead>
                     </tr>
                 </table></div>`,
-                `Consider this as the minimal status: <i>Running, Finished and Stopped</i>.`
+                `Consider these statuses as the minimal to have: <i>Running, Finished, Stopped and Failed</i>.`
             ]
         }]
     },
