@@ -203,7 +203,7 @@ let data = [{
     },
     {
         "section": "Websites",
-        "notes": [`<i>Unclickable links could mean JavaScript created links. Inspect the source code. If this is the case, a JS injection is required.</i>`,`<i>Challenging situations can be refactored in small projects with <a href="https://www.selenium.dev/" target="_blank">Selenium</a>.</i>`],
+        "notes": [`Unclickable links could mean JavaScript created links. Inspect the source code. If this is the case, a JS injection is required.`,`Challenging situations can be refactored in small projects with <a href="https://www.selenium.dev/" target="_blank">Selenium</a>.`],
         "practices": [{
             "title": "General",
             "content": [

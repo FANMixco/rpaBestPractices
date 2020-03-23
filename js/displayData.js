@@ -71,7 +71,7 @@ $(function(){
         }
 
         for (let note in elem.notes) {
-            notes += `<li><i>${elem.notes[note]}</i></li>`;
+            notes += `<li>${elem.notes[note]}</li>`;
         }
 
         if (notes !== "") {
