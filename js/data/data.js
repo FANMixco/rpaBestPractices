@@ -38,6 +38,8 @@ let data = [{
             "title": "",
             "content": [
                 `Identify <b>Low hanging fruits</b> and <b>Quick wins</b> for the first steps. Later, work in the <b>Must-do Improvements</b> and <b>Long-term Improvements</b> (<a href="https://www.uipath.com/rpa/academy/training">more info</a>).`,
+                `Identify if the process to be automated is <b>Attended</b>, <b>Unattended</b> or a mix (<a href="https://www.ibm.com/blogs/cloud-computing/2018/11/19/attended-unattended-rpa-bots/" target="_blank">more info</a>).<ul><li>
+                <b>💡 Tip.</b> You can agree to this in collaboration between the IT department and operations.</li></ul>`,
                 `Pre-screen 3rd party websites.<ul><li><b>⚠️ Warning.</b> Some websites have some regulations that block automations or web scraping. Read them carefully. A very good example is <a href="https://www.linkedin.com/legal/user-agreement?trk=hb_ft_userag#dos" target="_blank">LinkedIn</a>.</li></ul>`,
                 `Define an owner for every application, in order to contact in case of any issue or query.`,
                 `Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.`,
