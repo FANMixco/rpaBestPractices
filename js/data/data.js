@@ -305,6 +305,7 @@ let data = [{
             "content": [
                 `Store all actions performed by the RPA, including errors, the CPU consumption, etc.`,
                 `Define a logic for the logs (<a href="logsTemplate.db">template</a> in SQLite), for example:
+                <div class="table-responsive">
                 <table class="table">
                     <tr>
                     <thead>
@@ -331,7 +332,7 @@ let data = [{
                         </th>
                     </thead>
                     </tr>
-                </table>`,
+                </table></div>`,
                 `Consider this as the minimal status: <i>Running, Finished and Stopped</i>.`
             ]
         }]
