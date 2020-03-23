@@ -51,6 +51,9 @@ let data = [{
                 <li>Decimal separator <b>(. or ,)</b></li>
                 <li>CPU, RAM, etc.</li>
                 </ul>`,
+                `Record videos of the entire processes. <i>BRDs and complex documentations are not enough for the support team.</i>`,
+                `Create the flows of the process and double-check if they are repetitive.`,
+                `Document all known exceptions. You can create a special document for them.`,
                 `Document average execution time of all applications. If there is any historical data of any pick. It should be documented with its details.`,
                 `Investigate if any app, website or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
                 `Do not consider projects where there are connectivity issues or multiple networks.<ul><li><b>⚠️ Warning.</b> Most RPA solutions cannot work offline. Also, they keep validating its license with the Command Center.</li></ul>`,
