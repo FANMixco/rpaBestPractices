@@ -26,7 +26,8 @@ let data = [{
                 `Use Image Recognition or Coordinates as the last resources. They tend to be highly inaccurate.`,
                 `Use the Recorders only for small pieces. Do not automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.`,
                 `Create backups (clones) of the final production version of the RPA. This one would be useful if there is any disruption in the service and can be easily start.`,
-                `Use a dashboard to monitor all RPAs. If they are working, paused, stopped, failed, etc. It can be the default of the chosen platform.`
+                `Use a dashboard to monitor all RPAs. If they are working, paused, stopped, failed, etc. It can be the default of the chosen platform.`,
+                `Create a Load Balancing Plan (one passive and one active RPA for the same process). This might need a special agreement with the RPA provider.`
             ]
         }]
     },
@@ -37,22 +38,22 @@ let data = [{
             "title": "",
             "content": [
                 `Identify <b>Low hanging fruits</b> and <b>Quick wins</b> for the first steps. Later, work in the <b>Must-do Improvements</b> and <b>Long-term Improvements</b> (<a href="https://www.uipath.com/rpa/academy/training">more info</a>).`,
-                `Pre-screen 3rd party websites.<ul><li><b>⚠️ Warning.</b> Some websites have some regulations that block automations. Read them carefully. A very good example is <a href="https://www.linkedin.com/legal/user-agreement?trk=hb_ft_userag#dos" target="_blank">LinkedIn</a>.</li></ul>`,
+                `Pre-screen 3rd party websites.<ul><li><b>⚠️ Warning.</b> Some websites have some regulations that block automations or web scraping. Read them carefully. A very good example is <a href="https://www.linkedin.com/legal/user-agreement?trk=hb_ft_userag#dos" target="_blank">LinkedIn</a>.</li></ul>`,
                 `Define an owner for every application, in order to contact in case of any issue or query.`,
                 `Collect all authorizations, authentications, performance, expected response time, scalability expected, SLAs, etc. Nothing should be over-seen.`,
                 `Collect all information where the process was running:
                 <ul>
                 <li><b>Region</b> (Poland, the USA, Spain, Germany, etc.)</li>
                 <li>Language (en-US, es-ES, en-UK, pl-PL, etc.)</li>
-                <li>List Separator <b>(, or ;)</b></li>
+                <li>List Separator <b>(, or ;)</b>. This is important for any <b>CSV processing</b></li>
                 <li>Decimal separator <b>(. or ,)</b></li>
                 <li>CPU, RAM, etc.</li>
                 </ul>`,
-                `Identify if there is any <b>CSV</b> to process and what the <b>List Separator (, or ;)</b> is in the device. This must be the same for the robot.`,
                 `Document average execution time of all applications. If there is any historical data of any pick. It should be documented with its details.`,
                 `Investigate if any app, website or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
-                `Do not consider projects where there are connectivity issues or multiple networks. Most RPA solutions cannot work offline. They have a requirement of constantly validating its license.`,
-                `Define and get approvals for Test, UAT and Production environment for all tools in advance. Ensure these tools look the same and have the same IDs to avoid unnecessary reconfigurations when they are moved to Production. <i>SAP, for example, can have different IDs for the same controls in Prod and Test.</i>`,
+                `Do not consider projects where there are connectivity issues or multiple networks.<ul><li><b>⚠️ Warning.</b> Most RPA solutions cannot work offline. Also, they keep validating its license with the Command Center.</li></ul>`,
+                `Define and get approvals for Test, UAT and Production environments for all tools in advance.`,
+                `Ensure these tools look alike and have the same IDs to avoid unnecessary reconfigurations in Production.<i>SAP, for example, can have different IDs for the same controls in Prod and Test.</i>`,
                 `For projects that require VPNs:
                 <ul>
                 <li><b>Soft tokens</b> (apps installed in the PCs/VMs) should be considered as the medium-term developments.</li>
@@ -162,7 +163,7 @@ let data = [{
                     Seldomly, any service can stop either in the robot's PC/VM or the Control Room, and they must be restarted manually.
                     </li>
                     <li>
-                        <b>💡Tip.</b> Check the <i>Task Manager (Ctrl+Alt+Del)</i> and verify if all AA services are running.
+                        <b>💡 Tip.</b> Check the <i>Task Manager (Ctrl+Alt+Del)</i> and verify if all AA services are running.
                     </li>
                     </ul>`
                 ]
@@ -252,7 +253,7 @@ let data = [{
             "title": "",
             "content": [
                 `Create a policy for General Mailboxes and robots' PCs/VMs of non-expiring passwords.<ul><li>
-                <b>💡Tip.</b> If it's impossible, preconfigure a robot that sends a reminder and document this situation.</li></ul>`,
+                <b>💡 Tip.</b> If it's impossible, preconfigure a robot that sends a reminder and document this situation.</li></ul>`,
                 `Use the credential vault manager of the RPA solutions by default.`,
                 `In the case of .NET solutions. Use the <i>app.config or web.config</i> encrypted.`,
                 `In the case of Java apps. Store the data in the <i>web.xml, .configuration, AppConfig.xml</i>, etc.`,
@@ -285,9 +286,9 @@ let data = [{
             "title": "Scanned documents",
             "content": [
                 `Transform all PDFs or Word documents to <b>TIFF</b>. This ensures no metadata corrupts their processing (<a href="https://www.automationanywhere.com/products/iq-bot" target="_blank">IQ Bots</a> in AA, for instance).<ul><li>
-                <b>💡Tip.</b> In the case of .NET developments, you can do this with <a href="https://github.com/dlemstra/Magick.NET" target="_blank">ImageMagick.NET</a> and <a href="https://www.ghostscript.com/">GhostScript</a>.</li></ul>`,
+                <b>💡 Tip.</b> In the case of .NET developments, you can do this with <a href="https://github.com/dlemstra/Magick.NET" target="_blank">ImageMagick.NET</a> and <a href="https://www.ghostscript.com/">GhostScript</a>.</li></ul>`,
                 `Identify all documents that could be encrypted and decrypt them in advance.<ul><li>
-                <b>💡Tip.</b> You could partially automate this task with <a href="http://qpdf.sourceforge.net" target="_blank">QPDF</a>.</li></ul>`
+                <b>💡 Tip.</b> You could partially automate this task with <a href="http://qpdf.sourceforge.net" target="_blank">QPDF</a>.</li></ul>`
             ]
         }]
     },
