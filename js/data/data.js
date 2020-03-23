@@ -53,7 +53,7 @@ let data = [{
                 `Investigate if any app, website or software is under development or constant changes. If there is any, it must not be automated until the changes have stopped.`,
                 `Do not consider projects where there are connectivity issues or multiple networks.<ul><li><b>⚠️ Warning.</b> Most RPA solutions cannot work offline. Also, they keep validating its license with the Command Center.</li></ul>`,
                 `Define and get approvals for Test, UAT and Production environments for all tools in advance.`,
-                `Ensure these tools look alike and have the same IDs to avoid unnecessary reconfigurations in Production.<i>SAP, for example, can have different IDs for the same controls in Prod and Test.</i>`,
+                `Ensure all apps are the same (versions) and look alike. In order to have the same IDs and avoid unnecessary reconfigurations in Production. <i>SAP, for example, can have different IDs for the same controls in Prod and Test.</i>`,
                 `For projects that require VPNs:
                 <ul>
                 <li><b>Soft tokens</b> (apps installed in the PCs/VMs) should be considered as the medium-term developments.</li>
