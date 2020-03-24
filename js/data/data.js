@@ -177,6 +177,12 @@ let data = [{
                     </li>
                     </ul>`
                 ]
+            },
+            {
+                "title": "UiPath",
+                "content": [
+                    `Use the <a href="https://docs.uipath.com/studio/docs/robotic-enterprise-framework" target="_blank">Robotic Enterprise Framework</a> as a <b>template</b> for all your RPAs.`
+                ]
             }
         ]
     },
