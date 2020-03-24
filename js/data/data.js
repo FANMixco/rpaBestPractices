@@ -373,10 +373,10 @@ let data = [{
         "practices": [{
             "title": "SAP",
             "content": [
-                `Enable SAP Scripting. If SAP Scripting is not enabled, the recognition of controls can be very poor and inefficient.`,
+                `Enable SAP Scripting.<ul><li><b>⚠️ Warning.</b> If SAP Scripting is disabled, controls recognition can be very poor and inefficient.</li></ul>`,
                 `Use SAP recognition controls provided by the RPAs as the default option when they're available.`,
                 `Map 3 kernels maximum per PC/VM. More Kernels can bring slowness in the login.`,
-                `Use the "Find" option to search by field name. In this way, the field will always appear on the top of the table.`,
+                `Use the <b>Find option</b> to search by field name. In this way, the field will always appear on the top of the table.`,
                 `Consider to use SAP layout creation, if you require any SAP download. This allows you to create a list of columns to be downloaded.`
             ]
         }]
