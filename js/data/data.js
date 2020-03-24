@@ -409,7 +409,7 @@ let data = [{
                 `Replicate as close as possible the configuration in the VMs.`,
                 `Identify internal apps and macros.<ul><li><b>⚠️ Warning.</b> They might need to be refactored with new connection strings related to the cloud.</li></ul>`,
                 `Document all apps, including third party ones, websites, databases, shared drives, macros, services, etc.`,
-                `Identify the architecture of the apps (x86, x64 or ARM). They must be the same in the VMS..<ul><li><b>⚠️ Warning.</b> Some apps behave different between different architectures like <a href="https://docs.microsoft.com/en-us/office/client-developer/shared/compatibility-between-the-32-bit-and-64-bit-versions-of-office" target="blank">Microsoft Office.</a></li></ul>`,
+                `Identify the architecture of the apps (x86, x64 or ARM). They must be the same in the VMs.<ul><li><b>⚠️ Warning.</b> Some apps have different features depending on the architecture (x86 and x64) like <a href="https://docs.microsoft.com/en-us/office/client-developer/shared/compatibility-between-the-32-bit-and-64-bit-versions-of-office" target="blank">Microsoft Office.</a></li></ul>`,
                 `Create individual VMs for each RPAs with minimal resources as in <i>Requirements gathering</i>.`,
                 `Install the Command Center in a Virtual Machines.`,
                 `SetUp and Configure the DB in a VM. It's nearly impossible to use PaaS for SQL DBs (verify with your provider).`,
