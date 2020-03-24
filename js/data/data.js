@@ -391,10 +391,13 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Advisable, clone the PCs as new VMs, including the DB servers and RPA Command Center. This saves a lot of time.`,
+                `Advisable, clone the PCs as new VMs, including the DB servers and RPA Command Centers. This saves a lot of time.`,
+                `Define a new archicture with all PCs, Command Center, etc. Initially, it should be as close as possible to the on-premises one.`,
                 `Choose a cloud provider that fit your business needs.`,
                 `Enumerate all RPAs to move from on-premises to the cloud.`,
                 `Define an owner for each RPA.`,
+                `Identify all licensed software.<ul><li><b>⚠️ Warning.</b> Some software have special licensing for the clouds like <a href="https://www.microsoft.com/en-us/licensing/news/updated-licensing-rights-for-dedicated-cloud" target="_blank"> Microsoft Office</a>.</li></ul>`,
+                `Get some extra licenses for the RPAs. They might be required until the cloud solution is fully functional.`,
                 `Identify all configurations from the robots' PCs, for example:<ul>
                 <li>Operating System (including version)</li>
                 <li><b>Region</b> (Poland, the USA, Spain, Germany, etc.)</li>
@@ -406,6 +409,7 @@ let data = [{
                 `Replicate as close as possible the configuration in the VMs.`,
                 `Identify internal apps and macros.<ul><li><b>⚠️ Warning.</b> They might need to be refactored with new connection strings related to the cloud.</li></ul>`,
                 `Document all apps, including third party ones, websites, databases, shared drives, macros, services, etc.`,
+                `Identify the architecture of the apps (x86, x64 or ARM). They must be the same in the VMS..<ul><li><b>⚠️ Warning.</b> Some apps behave different between different architectures like <a href="https://docs.microsoft.com/en-us/office/client-developer/shared/compatibility-between-the-32-bit-and-64-bit-versions-of-office" target="blank">Microsoft Office.</a></li></ul>`,
                 `Create individual VMs for each RPAs with minimal resources as in <i>Requirements gathering</i>.`,
                 `Install the Command Center in a Virtual Machines.`,
                 `SetUp and Configure the DB in a VM. It's nearly impossible to use PaaS for SQL DBs (verify with your provider).`,
