@@ -395,8 +395,17 @@ let data = [{
                 `Choose a cloud provider that fit your business needs.`,
                 `Enumerate all RPAs to move from on-premises to the cloud.`,
                 `Define an owner for each RPA.`,
-                `Identify internal apps and macros. They might need to be refactored with new connection strings related to the cloud. Also, you need to assingn people who will refactor them.`,
-                `Identify and document all apps, including third party ones, websites, databases, shared drives, macros, services, etc.`,
+                `Identify all configurations from the robots' PCs, for example:<ul>
+                <li>Operating System (including version)</li>
+                <li><b>Region</b> (Poland, the USA, Spain, Germany, etc.)</li>
+                <li>Language (en-US, es-ES, en-UK, pl-PL, etc.)</li>
+                <li>List Separator <b>(, or ;)</b>. This is important for any <b>CSV processing</b></li>
+                <li>Decimal separator <b>(. or ,)</b></li>
+                <li>CPU, RAM, etc.</li>
+                </ul>`,
+                `Replicate as close as possible the configuration in the VMs.`,
+                `Identify internal apps and macros.<ul><li><b>⚠️ Warning.</b> They might need to be refactored with new connection strings related to the cloud.</li></ul>`,
+                `Document all apps, including third party ones, websites, databases, shared drives, macros, services, etc.`,
                 `Create individual VMs for each RPAs with minimal resources as in <i>Requirements gathering</i>.`,
                 `Install the Command Center in a Virtual Machines.`,
                 `SetUp and Configure the DB in a VM. It's nearly impossible to use PaaS for SQL DBs (verify with your provider).`,
