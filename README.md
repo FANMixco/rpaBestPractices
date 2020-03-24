@@ -1,6 +1,6 @@
-# RPA Best Practices
+# 🤖 RPA Best Practices
 
-This website is searching to collect the best Practices to develop RPAs. Especially, that there are multiple categories:
+This website is searching to collect all **Best Practices** to develop **RPAs** (Robotic Process Automations). I have already these categories on my list:
 
 - Basics
 - Requirements Gathering
@@ -17,8 +17,6 @@ This website is searching to collect the best Practices to develop RPAs. Especia
 - ERP
 - Citrix/Virtual Machines
 
-Or you might have another idea in mind!
-
-Do you have any? Feel free to share it!
+Maybe you have another one! Or something platform specific for Automation Anywhere or UiPath! Feel free to share it.
 
 https://forms.gle/UmDAjrnm9BfDnLL3A
