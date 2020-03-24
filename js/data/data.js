@@ -115,7 +115,7 @@ let data = [{
                         <tr>
                         <td>8 core Intel Xeon Processor</td>
                         <td>16 GB</td>
-                        <td>128 GB</td>
+                        <td>128 GB + 256 GB (Data)</td>
                         <td>10 GbE</td>
                         </tr>
                     </tbody>
@@ -134,7 +134,7 @@ let data = [{
                     </thead>
                     <tbody>
                         <tr>
-                        <td>4 virtual CPU (vCPU) or Logical Processor with 1.2 to 1.5 GHz speed per vCPU</td>
+                        <td>4 virtual CPU (vCPU) with 1.2 to 1.5 GHz speed per vCPU</td>
                         <td>8 GB</td>
                         <td>64 GB</td>
                         <td>1 GbE</td>
@@ -382,6 +382,32 @@ let data = [{
             "title": "UiPath",
             "content": [
                 `Use <a href="https://www.uipath.com/product/platform/ai-computer-vision-for-rpa" target="_blank">Computer Vision</a> to identify controls based on patterns. This solution is more stable that identifying images or typical OCRs.`
+            ]
+        }]
+    },
+    {
+        "section": "Migration to the Cloud",
+        "notes": [`Suggested providers: Azure, AWS and Google Cloud.`],
+        "practices": [{
+            "title": "",
+            "content": [
+                `Advisable, clone the PCs as new VMs, including the DB servers and RPA Command Center. This saves a lot of time.`,
+                `Choose a cloud provider that fit your business needs.`,
+                `Enumerate all RPAs to move from on-premises to the cloud.`,
+                `Define an owner for each RPA.`,
+                `Identify internal apps and macros. They might need to be refactored with new connection strings related to the cloud. Also, you need to assingn people who will refactor them.`,
+                `Identify and document all apps, including third party ones, websites, databases, shared drives, macros, services, etc.`,
+                `Create individual VMs for each RPAs with minimal resources as in <i>Requirements gathering</i>.`,
+                `Install the Command Center in a Virtual Machines.`,
+                `SetUp and Configure the DB in a VM. It's nearly impossible to use PaaS for SQL DBs (verify with your provider).`,
+                `BackUp and restore internal databases in a Test environment.`,
+                `Verify there is connection among the VMs.<ul><li>
+                <b>💡 Tip.</b> The <b>ping</b> command can be disabled by default. You can enable it from the Firewall.</li></ul>`,
+                `Replicate the exact configuration with <b>Region</b> and all, in the new VMs.`,
+                `Reinstall and configure:<ul><li>All required software in the new VM, for example, Microsoft Office, SAP, third party apps, etc.</li><li>RPA clients.</li></ul>`,
+                `Refactor and test all internal apps and macros. Verify if all is working in the Test environment.`,
+                `Create new test cases for the RPAs on the cloud with the refactored apps.`,
+                `Change configurations robot by robot in the internal apps and test in production.`
             ]
         }]
     }
