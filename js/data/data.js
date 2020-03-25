@@ -254,6 +254,7 @@ let data = [{
         "practices": [{
             "title": "Automation Anywhere",
             "content": [
+                `Run Excels on the background when it's possible. If it's not possible, run them as maximized (full screen).`,
                 `Avoid reading multiple <i>Excels Sessions</i> at the same time in loops. Limit it to one per loop. <i>If you need a second Excel Session inside of a loop, consider using one as a <a href="https://rpaknowledge.com/automation-anywhere-database-command-excel/" target="_blank">database</a>.</i>`
             ]
         }]
@@ -382,6 +383,7 @@ let data = [{
             "title": "SAP GUI",
             "content": [
                 `Enable <a href="https://docs.uipath.com/studio/docs/enabling-sap-gui-scripting" target="_blank">SAP GUI Scripting</a>.<ul><li><b>⚠️ Warning.</b> If SAP GUI Scripting is disabled, controls recognition can be very poor and inefficient.</li></ul>`,
+                `Avoid resizing any window. It can create strange behaviors.`,
                 `Map 3 kernels maximum per PC/VM, more kernels bring slowness during the login.`,
                 `Use the <b>Find option</b> to search by field name. In this way, the field will always appear on the top of the table.`,
                 `Consider using SAP layout creation, if you require any SAP download. This creates a list of columns to download.`,
