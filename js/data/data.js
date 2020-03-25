@@ -201,7 +201,8 @@ let data = [{
                     `Close all apps ran by the robot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
                     `Do not run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`,
                     `Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.`,
-                    `Access dropdowns through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to change.`
+                    `Access dropdowns through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to change.`,
+                    `Advisable, if the RPA has a <i>Smart</i> recorder (it recognizes IDs), you can use it for small automations.`
                 ]
             },
             {
@@ -228,9 +229,12 @@ let data = [{
         "practices": [{
             "title": "General",
             "content": [
+                `Run the browser in <b>maximized (full screen)</b> for the best performace.`,
+                `Minimize the usage of Internet Explorer.`,
                 `Use IDs for identifying controls.`,
                 `Ensure all internal websites have IDs in the required controls (buttons, inputs, etc.). The lack of them can create inaccuracies.`,
-                `Access <i>selects</i> through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to adapt.`
+                `Access <i>selects</i> through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to adapt.`,
+                `Advisable, if the RPA has a recorder, you can use it for small automations.`
             ]
         },{
             "title": `<a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a>`,
@@ -378,10 +382,10 @@ let data = [{
             "title": "SAP GUI",
             "content": [
                 `Enable <a href="https://docs.uipath.com/studio/docs/enabling-sap-gui-scripting" target="_blank">SAP GUI Scripting</a>.<ul><li><b>⚠️ Warning.</b> If SAP GUI Scripting is disabled, controls recognition can be very poor and inefficient.</li></ul>`,
-                `Use SAP recognition controls provided by the RPAs as your default option. If they're available, not all RPAs provide them.`,
                 `Map 3 kernels maximum per PC/VM, more kernels bring slowness during the login.`,
                 `Use the <b>Find option</b> to search by field name. In this way, the field will always appear on the top of the table.`,
-                `Consider using SAP layout creation, if you require any SAP download. This creates a list of columns to download.`
+                `Consider using SAP layout creation, if you require any SAP download. This creates a list of columns to download.`,
+                `Advisable, use SAP recognition controls provided by the RPAs as your default option. If they're available, not all RPAs provide them.`
             ]
         }]
     },
