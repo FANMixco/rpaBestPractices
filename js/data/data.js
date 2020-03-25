@@ -371,13 +371,13 @@ let data = [{
         "section": "ERPs",
         "notes": [],
         "practices": [{
-            "title": "SAP",
+            "title": "SAP GUI",
             "content": [
-                `Enable SAP Scripting.<ul><li><b>⚠️ Warning.</b> If SAP Scripting is disabled, controls recognition can be very poor and inefficient.</li></ul>`,
-                `Use SAP recognition controls provided by the RPAs as the default option when they're available.`,
-                `Map 3 kernels maximum per PC/VM. More Kernels can bring slowness in the login.`,
+                `Enable <a href="https://docs.uipath.com/studio/docs/enabling-sap-gui-scripting" target="_blank">SAP GUI Scripting</a>.<ul><li><b>⚠️ Warning.</b> If SAP GUI Scripting is disabled, controls recognition can be very poor and inefficient.</li></ul>`,
+                `Use SAP recognition controls provided by the RPAs as your default option. If they're available, not all RPAs provide them.`,
+                `Map 3 kernels maximum per PC/VM, more kernels bring slowness during the login.`,
                 `Use the <b>Find option</b> to search by field name. In this way, the field will always appear on the top of the table.`,
-                `Consider to use SAP layout creation, if you require any SAP download. This allows you to create a list of columns to be downloaded.`
+                `Consider using SAP layout creation, if you require any SAP download. This creates a list of columns to download.`
             ]
         }]
     },
