@@ -24,6 +24,17 @@ const contactIFrame = `<div class="card">
 </div>
 </div>`;
 
+const importanceContent = `<div class="card-body">
+<blockquote class="blockquote" cite="https://blog.prialto.com/the-importance-of-best-practices">
+ <p class="mb-0">Sometimes it's easy to take certain everyday processes for granted, especially when not doing them as efficiently as we could have doesn't always have an apparent negative effect. But over time, neglecting the small things can end up sabotaging the big things. To quote a famous proverb,“For want of a nail... the kingdom was lost.”</p>
+ <footer class="blockquote-footer">Jessie Silverman <cite title="The Importance of Best Practices">The Importance of Best Practices</cite></footer>
+ </blockquote>
+ <br />
+ <p>The previous quote is an excellent example of my experience with Robotic Process Automation (RPA). In the beginning, I didn't know how to start or where to go. When I built my first RPAs, they didn't follow any standards. They worked quite well, but over time the adjustments became a nightmare. I followed the basic approach of believing, I can just easily emulate the human behaviors in the PCs. One of my greatest challenges happened years later. When I led the migration of multiple RPAs to the cloud and our poor standards, created considerable challenges and additional work.</p>
+ <p>Speaking of standards, the documentation is lacking and varies from provider to provider. Each provider follows their own standards and the information is generally restrictive for the people who joined their courses. One of the biggest challenges in RPA is that they are <a href="https://en.wikipedia.org/wiki/Low-code_development_platform" target="_blank">Low-Code Development Platforms (LCDP).</a> They do not easily follow well-known practices such as DevOps, Agile, TDD, etc.</p>
+ <p>Over the years, I have found few documents about them. Most of my experience is related to making multiple mistakes and serious issues that I faced while leading, implementing and gathering requirements for new RPAs. Inside of my organization, I started to implement some standards for building new RPAs like video documentation and cloud migrations. However, I was sure that this idea should go beyond there. Therefore, I decided to create this website where I would like to invite more <b>RPA experts</b> to share their experience as well. <b>Making better transitions and developments in Industry 4.0 together.</b></p>
+</div>`;
+
 const importance = `<div class="card">
 <div class="card-header" id="headingImportance">
    <h4 class="mb-0">
@@ -33,18 +44,23 @@ const importance = `<div class="card">
    </h4>
 </div>
 <div id="collapseImportance" class="collapse show" aria-labelledby="headingImportance" data-parent="#accordionRPA">
-   <div class="card-body">
-   <blockquote class="blockquote" cite="https://blog.prialto.com/the-importance-of-best-practices">
-    <p class="mb-0">Sometimes it's easy to take certain everyday processes for granted, especially when not doing them as efficiently as we could have doesn't always have an apparent negative effect. But over time, neglecting the small things can end up sabotaging the big things. To quote a famous proverb,“For want of a nail... the kingdom was lost.”</p>
-    <footer class="blockquote-footer">Jessie Silverman <cite title="The Importance of Best Practices">The Importance of Best Practices</cite></footer>
-    </blockquote>
-    <br />
-    <p>The previous quote is an excellent example of my experience with Robotic Process Automation (RPA). In the beginning, I didn't know how to start or where to go. When I built my first RPAs, they didn't follow any standards. They worked quite well, but over time the adjustments became a nightmare. I followed the basic approach of believing, I can just easily emulate the human behaviors in the PCs. One of my greatest challenges happened years later. When I led the migration of multiple RPAs to the cloud and our poor standards, created considerable challenges and additional work.</p>
-    <p>Speaking of standards, the documentation is lacking and varies from provider to provider. Each provider follows their own standards and the information is generally restrictive for the people who joined their courses. One of the biggest challenges in RPA is that they are <a href="https://en.wikipedia.org/wiki/Low-code_development_platform" target="_blank">Low-Code Development Platforms (LCDP).</a> They do not easily follow well-known practices such as DevOps, Agile, TDD, etc.</p>
-    <p>Over the years, I have found few documents about them. Most of my experience is related to making multiple mistakes and serious issues that I faced while leading, implementing and gathering requirements for new RPAs. Inside of my organization, I started to implement some standards for building new RPAs like video documentation and cloud migrations. However, I was sure that this idea should go beyond there. Therefore, I decided to create this website where I would like to invite more <b>RPA experts</b> to share their experience as well. <b>Making better transitions and developments in Industry 4.0 together.</b></p>
-   </div>
+${importanceContent}
 </div>
 </div>`;
+
+const importanceSmall = `<div class="card">
+<div class="card-header" id="headingImportance">
+   <h4 class="mb-0">
+   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseImportance" aria-expanded="false" aria-controls="collapseImportance">
+   The importance of RPA Best Practices
+   </button>
+   </h4>
+</div>
+<div id="collapseImportance" class="collapse" aria-labelledby="headingImportance" data-parent="#accordionRPA">
+${importanceContent}
+</div>
+</div>`;
+;
 
 const commentsIFrame = `<div class="card">
 <div class="card-header" id="headingComments">
@@ -81,7 +97,10 @@ const credits = `<div class="card">
 </div>`;
 
 $(function(){
-    $("#accordionRPA").append(importance);
+   if (WURFL.is_mobile && WURFL.form_factor === "Smartphone")
+      $("#accordionRPA").append(importanceSmall);
+   else 
+      $("#accordionRPA").append(importance);
 
     for(let item in data) {
         let elem = data[item];
