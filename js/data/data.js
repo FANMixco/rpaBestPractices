@@ -9,7 +9,7 @@ let data = [{
                 `Define an <b>Infrastructure as a Service (IaaS)</b> in a <b>cloud</b> (Azure, Google Cloud, AWS, etc.).
                 <ul>
                 <li>Robots running in VMs are less prone to errors due to hardware changes.</li>
-                <li>Robots can continue working even if there was any disruption in their physical centers, e.g., Coronavirus.</li></ul>`,
+                <li>Robots can continue working even if there was any disruption in their physical centers, e.g. Coronavirus.</li></ul>`,
                 `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Develop all robots in Virtual Machines with the same screen resolution.`,
                 `Configure the <b>Region</b> (Poland, the USA, Germany, etc.) of the robot's VM/PC as it was in the original process's PC. The same applies to certain software like <b>SAP</b>.<ul>
@@ -27,7 +27,7 @@ let data = [{
                 `Use the Recorders only for small pieces. Do not automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.`,
                 `Create backups (clones) of the final production version of the RPA. This one would be useful if there is any disruption in the service and can be easily start.`,
                 `Use a dashboard to monitor all RPAs. If they are working, paused, stopped, failed, etc. It can be the default of the chosen platform.`,
-                `Create a Load Balancing Plan (one passive and one active RPA for the same process). This might need a special agreement with the RPA provider.`,
+                `Create a Load Balancing configuration (1 passive and 1 active RPA) for Business Continuity Plans. This might need a special agreement with the RPA provider.`,
                 `Advisable, create a process that allows the robot to restart its work at a certain point when it failed or stopped.`
             ]
         }]
@@ -178,7 +178,7 @@ let data = [{
                     </ul>`,
                     `Must acquire new servers/VMs in order to perform Control Room migrations.<ul>
                     <li>
-                    <b>⚠️ Warning.</b> There are no available options to migrate on the same server or have two control rooms running at the same time.</li>
+                    <b>⚠️ Warning.</b> There are no available options to migrate two different versions of the Control Room on the same server.</li>
                     </ul>`
                 ]
             },
@@ -406,7 +406,7 @@ let data = [{
                 `Choose a cloud provider that fit your business needs.`,
                 `Enumerate all RPAs to move from on-premises to the cloud.`,
                 `Define an owner for each RPA.`,
-                `Identify all licensed software.<ul><li><b>⚠️ Warning.</b> Some software have special licensing for the clouds like <a href="https://www.microsoft.com/en-us/licensing/news/updated-licensing-rights-for-dedicated-cloud" target="_blank"> Microsoft Office</a>.</li></ul>`,
+                `Identify all licensed software.<ul><li><b>⚠️ Warning.</b> Some software have special licenses for the clouds, e.g. <a href="https://www.microsoft.com/en-us/licensing/news/updated-licensing-rights-for-dedicated-cloud" target="_blank"> Microsoft Office</a>.</li></ul>`,
                 `Get some extra licenses for the RPAs. They might be required until the cloud solution is fully functional.`,
                 `Identify all configurations from the robots' PCs, for example:<ul>
                 <li>Operating System (including version)</li>
@@ -419,7 +419,7 @@ let data = [{
                 `Replicate as close as possible the configuration in the VMs.`,
                 `Identify internal apps and macros.<ul><li><b>⚠️ Warning.</b> They might need to be refactored with new connection strings related to the cloud.</li></ul>`,
                 `Document all apps, including third party ones, websites, databases, shared drives, macros, services, etc.`,
-                `Identify the architecture of the apps (x86, x64 or ARM). They must be the same in the VMs.<ul><li><b>⚠️ Warning.</b> Some apps have different features depending on the architecture (x86 and x64) like <a href="https://docs.microsoft.com/en-us/office/client-developer/shared/compatibility-between-the-32-bit-and-64-bit-versions-of-office" target="blank">Microsoft Office.</a></li></ul>`,
+                `Identify the architecture of the apps (x86, x64 or ARM). They must be the same in the VMs.<ul><li><b>⚠️ Warning.</b> Some apps have different features depending on the architecture (x86 and x64), e.g. <a href="https://docs.microsoft.com/en-us/office/client-developer/shared/compatibility-between-the-32-bit-and-64-bit-versions-of-office" target="blank">Microsoft Office.</a></li></ul>`,
                 `Create individual VMs for each RPAs with minimal resources as in <i>Requirements gathering</i>.`,
                 `Install the Command Center in a Virtual Machines.`,
                 `SetUp and Configure the DB in a VM. It's nearly impossible to use PaaS for SQL DBs (verify with your provider).`,
