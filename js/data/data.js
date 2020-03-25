@@ -175,6 +175,10 @@ let data = [{
                     <li>
                         <b>💡 Tip.</b> Check the <i>Task Manager (Ctrl+Alt+Del)</i> and verify if all AA services are running.
                     </li>
+                    </ul>`,
+                    `Must acquire new servers/VMs in order to perform Control Room migrations.<ul>
+                    <li>
+                    <b>⚠️ Warning.</b> There are no available options to migrate on the same server or have two control rooms running at the same time.</li>
                     </ul>`
                 ]
             },
