@@ -11,6 +11,8 @@ let data = [{
                 <li>Robots running in VMs are less prone to errors due to hardware changes.</li>
                 <li>Robots can continue working even if there was any disruption in their physical centers, e.g. Coronavirus.</li></ul>`,
                 `Create at least 3 unique environments for bots development: Test, UAT, and Production. This increases the RPAs quality.`,
+                `Generate <i>generic accounts</i> for the robots. Robots should not run on personal accounts.<ul><li>
+                <b>💡 Tip.</b> Develop the robots on these accounts. This avoids last minute changes.</li></ul>`,
                 `Configure the <b>Region</b> (Poland, the USA, Germany, etc.) of the robot's VM/PC as it was in the original process's PC. The same applies to certain software like <b>SAP</b>.<ul>
                 <li>
                 <b>⚠️ Warning.</b> If this is different, it can cause serious troubles.</li></ul>`,
