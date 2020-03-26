@@ -10,11 +10,11 @@ let data = [{
                 <ul>
                 <li>Robots running in VMs are less prone to errors due to hardware changes.</li>
                 <li>Robots can continue working even if there was any disruption in their physical centers, e.g. Coronavirus.</li></ul>`,
-                `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
-                `Develop all robots in Virtual Machines with the same screen resolution.`,
+                `Create at least 3 unique environments for bots development: Test, UAT, and Production. This increases the RPAs quality.`,
                 `Configure the <b>Region</b> (Poland, the USA, Germany, etc.) of the robot's VM/PC as it was in the original process's PC. The same applies to certain software like <b>SAP</b>.<ul>
                 <li>
                 <b>⚠️ Warning.</b> If this is different, it can cause serious troubles.</li></ul>`,
+                `Set the <b>VM/PC resolution</b> for Test, UAT and Production.`,
                 `Split the robots in small tasks that could be reused. This allows scalability and multi-robot per PC/VM.`,
                 `Store <b>Master data</b> in Excels or databases (<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a> is a free option). <b>No data must be hardcoded in the robots.</b>`,
                 `Track inline actions of each robot, storing them in a log.`,
@@ -25,7 +25,9 @@ let data = [{
                 `<b>Avoid manipulating Citrix, Remote Desktops or VMs from other PCs.</b> This reduces the performance and accuracy.`,
                 `Use Image Recognition or Coordinates as the last resources. They tend to be highly inaccurate.`,
                 `Use the Recorders only for small pieces. Do not automate full tasks. Also, validate the code generated is not using Image Recognitions or Specific locations.`,
+                `Process one case at the time. Sometimes, the users have workarounds to process many at the same time.`,
                 `Create backups (clones) of the final production version of the RPA. This one would be useful if there is any disruption in the service and can be easily start.`,
+                `Control all robots from their Command Centers (Control Room, Orchestrator, etc.)`,
                 `Use a dashboard to monitor all RPAs. If they are working, paused, stopped, failed, etc. It can be the default of the chosen platform.`,
                 `Create a Load Balancing configuration (1 passive and 1 active RPA) for Business Continuity Plans. This might need a special agreement with the RPA provider.`,
                 `Advisable, create a process that allows the robot to restart its work at a certain point when it failed or stopped.`
@@ -38,6 +40,8 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
+                `Confirm if the process to automate is actually repetitive. Test multiple cases.`,
+                `Create a flowchart of the process. This must be done processing one task at a time without interesting workarounds.`,
                 `Identify <b>Low hanging fruits</b> and <b>Quick wins</b> for the first steps. Later, work in the <b>Must-do Improvements</b> and <b>Long-term Improvements</b> (<a href="https://www.uipath.com/rpa/academy/training">more info</a>).`,
                 `Identify if the process to be automated is <b>Attended</b>, <b>Unattended</b> or a mix (<a href="https://www.ibm.com/blogs/cloud-computing/2018/11/19/attended-unattended-rpa-bots/" target="_blank">more info</a>).<ul><li>
                 <b>💡 Tip.</b> You can agree to this in collaboration between the IT department and operations.</li></ul>`,
@@ -53,7 +57,6 @@ let data = [{
                 <li>CPU, RAM, etc.</li>
                 </ul>`,
                 `Record videos of the entire processes. <i>BRDs and complex documentations are not enough for the support team.</i>`,
-                `Create the flows of the processes and double-check if they are repetitive.`,
                 `Document in detailed the following points:
                 <ul>
                 <li>All known exceptions. You can create a special document for them.</li>
@@ -157,15 +160,18 @@ let data = [{
             {
                 "title": "Automation Anywhere",
                 "content": [
-                    `Limit the usage of <b>WorkFlows</b> or <b>MetaBots</b>. None of them is supported in A2019.
+                    `Limit the usage of <b>WorkFlows</b> or <b>MetaBots</b>.
                     <ul>
+                    <li>
+                    <b>⚠️ Warning.</b> None of them is supported in A2019.
+                    </li>
                     <li>
                     <b>⚠️ Warning.</b> WorkFlows cannot be scheduled in the Control Room.
                     </li>
                     </ul>`,
-                    `In AA11.3+. Predefine all Dictionaries' Keys while creating the robot.<ul>
+                    `Acquire new servers/VMs to perform Control Room migrations.<ul>
                     <li>
-                    <b>⚠️ Warning.</b> You cannot add new Keys on Runtime.</li>
+                    <b>⚠️ Warning.</b> There are no available options to migrate/run two different versions of the Control Room on the same server (Mar 20019).</li>
                     </ul>`,
                     `Define at least, one user with full <b>Admin Rights</b>.
                     <ul>
@@ -175,10 +181,6 @@ let data = [{
                     <li>
                         <b>💡 Tip.</b> Check the <i>Task Manager (Ctrl+Alt+Del)</i> and verify if all AA services are running.
                     </li>
-                    </ul>`,
-                    `Must acquire new servers/VMs in order to perform Control Room migrations.<ul>
-                    <li>
-                    <b>⚠️ Warning.</b> There are no available options to migrate two different versions of the Control Room on the same server.</li>
                     </ul>`
                 ]
             },
@@ -196,13 +198,12 @@ let data = [{
         "practices": [{
                 "title": "General",
                 "content": [
-                    `The resolution must be exactly the same in Test, UAT and Production.`,
                     `Run all apps in <b>maximized (full screen)</b> for the best performace.`,
                     `Close all apps ran by the robot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
-                    `Do not run more than 2 or 3 windows per action. Too many windows can cause instability or confusions for the RPAs.`,
+                    `Do not open more than 2 or 3 windows per action. Too many windows open can cause instability in the RPAs.`,
                     `Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.`,
                     `Access dropdowns through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to change.`,
-                    `Advisable, if the RPA has a <i>Smart</i> recorder (it recognizes IDs), you can use it for small automations.`
+                    `Advisable, if the RPA has a <i>Smart Recorder</i> (it recognizes IDs). Use it to automate small sections.`
                 ]
             },
             {
@@ -234,7 +235,8 @@ let data = [{
                 `Use IDs for identifying controls.`,
                 `Ensure all internal websites have IDs in the required controls (buttons, inputs, etc.). The lack of them can create inaccuracies.`,
                 `Access <i>selects</i> through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to adapt.`,
-                `Advisable, if the RPA has a recorder, you can use it for small automations.`
+                `Close the browser at the end of the process.`,
+                `Advisable, if the RPA has a Recorder. Use it to automate small sections and get the proper IDs.`
             ]
         },{
             "title": `<a href="https://dotnet.microsoft.com/apps/aspnet/web-forms" target="_blank">ASP.NET Web Forms</a>`,
@@ -250,7 +252,7 @@ let data = [{
     },
     {
         "section": "Excels processing",
-        "notes": [`It's advisable to process large and/or complex Excels by non-RPA solutions. RPAs tend to be quite slow and can take considerable amounts of time. An option is to write a console app with <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a>.`],
+        "notes": [`Advisable, process large and/or complex Excels by non-RPA solutions. RPAs tend to be quite slow and can take considerable amounts of time. An option is to write a console app with <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a>.`],
         "practices": [{
             "title": "Automation Anywhere",
             "content": [
@@ -362,11 +364,11 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Send the following e-mails:
+                `Send at least, the following e-mails:
                 <ol>
-                    <li>Each time a robot started.</li>
+                    <li>Each time a robot has started.</li>
                     <li>Each time a robot finished.</li>
-                    <li>To the manager at the end of the day with the performance results (SLAs).</li>
+                    <li>At the end of the day, to the <i>Robot Owner</i> (manager) with its performance results (SLAs).</li>
                 </ol>`,
                 `Ensure that only authorized e-mails receive the notification (mainly company's domain).`,
                 `Create an asynchronous task can be set in the Task Scheduler in order to monitor if the RPA is working. If the RPA solution stopped, it should send a notification by itself.
@@ -383,7 +385,7 @@ let data = [{
             "title": "SAP GUI",
             "content": [
                 `Enable <a href="https://docs.uipath.com/studio/docs/enabling-sap-gui-scripting" target="_blank">SAP GUI Scripting</a>.<ul><li><b>⚠️ Warning.</b> If SAP GUI Scripting is disabled, controls recognition can be very poor and inefficient.</li></ul>`,
-                `Avoid resizing any window. It can create strange behaviors.`,
+                `Avoid resizing any window. It can bring unexpected results.`,
                 `Map 3 kernels maximum per PC/VM, more kernels bring slowness during the login.`,
                 `Use the <b>Find option</b> to search by field name. In this way, the field will always appear on the top of the table.`,
                 `Consider using SAP layout creation, if you require any SAP download. This creates a list of columns to download.`,
