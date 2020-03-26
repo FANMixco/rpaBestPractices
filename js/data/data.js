@@ -200,11 +200,11 @@ let data = [{
         "practices": [{
                 "title": "General",
                 "content": [
-                    `Run all apps in <b>maximized (full screen)</b> for the best performace.`,
+                    `Run all apps in <b>maximized (full screen)</b> for the best performance.`,
                     `Close all apps ran by the robot at the end process. Ideally, using a <i>bat</i> for killing the tasks.`,
                     `Do not open more than 2 or 3 windows per action. Too many windows open can cause instability in the RPAs.`,
                     `Ensure that the screen, window, message, etc. Is fully visible and loaded. Either you can add a delay or ensure through other ways.`,
-                    `Access dropdowns through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to change.`,
+                    `Access <i>dropdowns</i> through their IDs. Store the expected values in a database. Therefore, if there is any change, it would be faster to change.`,
                     `Advisable, if the RPA has a <i>Smart Recorder</i> (it recognizes IDs). Use it to automate small sections.`
                 ]
             },
@@ -232,7 +232,7 @@ let data = [{
         "practices": [{
             "title": "General",
             "content": [
-                `Run the browser in <b>maximized (full screen)</b> for the best performace.`,
+                `Run the browser in <b>maximized (full screen)</b> for the best performance.`,
                 `Minimize the usage of Internet Explorer.`,
                 `Use IDs for identifying controls.`,
                 `Ensure all internal websites have IDs in the required controls (buttons, inputs, etc.). The lack of them can create inaccuracies.`,
@@ -269,7 +269,7 @@ let data = [{
         "practices": [{
             "title": "",
             "content": [
-                `Do not switch Macros Logic to RPAs Logic. Consider this situation only in extreme cases or on-demand. `,
+                `Do not switch Macros Logic to RPAs Logic. Consider this situation only in extreme cases or on-demand.`,
                 `Document average execution times. This avoids to kill any Macro in the middle of a long process.`,
                 `Remove all <b>Dialogs</b> (<a href="https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/msgbox-function" target="_blank">MsgBox</a> or <a href="https://docs.microsoft.com/en-us/office/vba/api/excel.application.inputbox" target="_blank">InputBox</a>). They can break the RPAs in most of the cases. If they are mandatory, you must implement new logic. You can write it in RPAs, databases, external files, etc.`
             ]
@@ -288,7 +288,7 @@ let data = [{
                 `In the case of Java apps. Store the data in the <i>web.xml, .configuration, AppConfig.xml</i>, etc.`,
                 `Ensure no passwords are stored in logs or displayed in GUIs.`,
                 `Identify all apps that need authentication and ensure the re-login time is assessed.`,
-                `Notify the team immediately if any app becomes unresponsive while login after some time (check in the Task Manager if it's actually unresponsive). `
+                `Notify the team immediately if any app becomes unresponsive while login after some time (check in the Task Manager if it's actually unresponsive).`
             ]
         }]
     },
