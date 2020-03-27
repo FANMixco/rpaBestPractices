@@ -26,7 +26,7 @@ const cardContact = `<div class="card">
 
 const importanceContent = `<div class="card-body">
 <blockquote class="blockquote" cite="https://blog.prialto.com/the-importance-of-best-practices">
- <p class="mb-0">Sometimes it's easy to take certain everyday processes for granted, especially when not doing them as efficiently as we could have doesn't always have an apparent negative effect. But over time, neglecting the small things can end up sabotaging the big things. To quote a famous proverb,“For want of a nail... the kingdom was lost.”</p>
+ <p class="mb-0">Sometimes it's easy to take certain everyday processes for granted, especially when not doing them as efficiently as we could have doesn't always have an apparent negative effect. But over time, neglecting the small things can end up sabotaging the big things. To quote a famous proverb, “For want of a nail… the kingdom was lost.”</p>
  <footer class="blockquote-footer">Jessie Silverman <cite title="The Importance of Best Practices">The Importance of Best Practices</cite></footer>
  </blockquote>
  <br />
