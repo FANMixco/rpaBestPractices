@@ -9,7 +9,7 @@ const cardTemplate = `<div class="card">
 </div>
 </div>`;
 
-const contactIFrame = `<div class="card">
+const cardContact = `<div class="card">
 <div class="card-header" id="headingContact">
    <h4 class="mb-0">
    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseContact" aria-expanded="false" aria-controls="collapseContact">
@@ -35,34 +35,20 @@ const importanceContent = `<div class="card-body">
  <p>Over the years, I have found few documents about them. Most of my experience is related to making multiple mistakes and serious issues that I faced while leading, implementing and gathering requirements for new RPAs. Inside of my organization, I started to implement some standards for building new RPAs like video documentation and cloud migrations. However, I was sure that this idea should go beyond there. Therefore, I decided to create this website where I would like to invite more <b>RPA experts</b> to share their experience as well. <b>Making better transitions and developments in Industry 4.0 together.</b></p>
 </div>`;
 
-const importance = `<div class="card">
+const importanceCard = `<div class="card">
 <div class="card-header" id="headingImportance">
    <h4 class="mb-0">
-   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseImportance" aria-expanded="true" aria-controls="collapseImportance">
+   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseImportance" aria-expanded="{0}" aria-controls="collapseImportance">
    The importance of RPA Best Practices
    </button>
    </h4>
 </div>
-<div id="collapseImportance" class="collapse show" aria-labelledby="headingImportance" data-parent="#accordionRPA">
+<div id="collapseImportance" class="collapse{1}" aria-labelledby="headingImportance" data-parent="#accordionRPA">
 ${importanceContent}
 </div>
 </div>`;
 
-const importanceSmall = `<div class="card">
-<div class="card-header" id="headingImportance">
-   <h4 class="mb-0">
-   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseImportance" aria-expanded="false" aria-controls="collapseImportance">
-   The importance of RPA Best Practices
-   </button>
-   </h4>
-</div>
-<div id="collapseImportance" class="collapse" aria-labelledby="headingImportance" data-parent="#accordionRPA">
-${importanceContent}
-</div>
-</div>`;
-;
-
-const commentsIFrame = `<div class="card">
+const commentsCard = `<div class="card">
 <div class="card-header" id="headingComments">
    <h4 class="mb-0">
    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseComments" aria-expanded="false" aria-controls="collapseComments">
@@ -77,7 +63,7 @@ const commentsIFrame = `<div class="card">
 </div>
 </div>`;
 
-const credits = `<div class="card">
+const creditsCard = `<div class="card">
 <div class="card-header" id="headingCredits">
    <h4 class="mb-0">
    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseCredits" aria-expanded="false" aria-controls="collapseCredits">
@@ -89,9 +75,7 @@ const credits = `<div class="card">
    <div class="card-body">
    <p>I would like to thank everyone who has shared their knowledge, sharing their best practices and tips as well.</p>
    <ul>
-    <li>Piotr Pastuszek</li>
-    <li>Boryz Kaszmarek</li>
-    </ul>
+{0}    </ul>
    </div>
 </div>
 </div>`;
@@ -100,14 +84,10 @@ $(function(){
    $.get( "https://rpa-best-practices.firebaseio.com/practices.json", function( data ) {
       // do something with myJson
 
-      //const data = JSON.parse(json);
-
-      console.log(data);
-
       if (WURFL.is_mobile && WURFL.form_factor === "Smartphone")
-         $("#accordionRPA").append(importanceSmall);
+         $("#accordionRPA").append(importanceCard.format("false", ""));
       else 
-         $("#accordionRPA").append(importance);
+         $("#accordionRPA").append(importanceCard.format("true", " show"));
 
       for(let item in data) {
          let elem = data[item];
@@ -153,17 +133,15 @@ $(function(){
          $("#accordionRPA").append(card);
       }
       
-      $("#accordionRPA").append(contactIFrame);
-      $("#accordionRPA").append(credits);
-      $("#accordionRPA").append(commentsIFrame);
+      $("#accordionRPA").append(cardContact);
+
+      let creditsList = "";
+      for (let item in credits){
+         creditsList += `<li>${credits[item]}</li>`
+      }
+
+      $("#accordionRPA").append(creditsCard.format(creditsList));
+      $("#accordionRPA").append(commentsCard);
       $('[data-toggle="tooltip"]').tooltip();
    });
 });
-
-String.prototype.format = function() {
-    a = this;
-    for (k in arguments) {
-      a = a.replace("{" + k + "}", arguments[k])
-    }
-    return a
-}
