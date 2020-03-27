@@ -89,7 +89,7 @@ const credits = `<div class="card">
    <div class="card-body">
    <p>I would like to thank everyone who has shared their knowledge, sharing their best practices and tips as well.</p>
    <ul>
-    <li>Pior Pastuszek</li>
+    <li>Piotr Pastuszek</li>
     <li>Boryz Kaszmarek</li>
     </ul>
    </div>
@@ -97,57 +97,67 @@ const credits = `<div class="card">
 </div>`;
 
 $(function(){
-   if (WURFL.is_mobile && WURFL.form_factor === "Smartphone")
-      $("#accordionRPA").append(importanceSmall);
-   else 
-      $("#accordionRPA").append(importance);
+   $.get( "https://rpa-best-practices.firebaseio.com/practices.json", function( data ) {
+      // do something with myJson
 
-    for(let item in data) {
-        let elem = data[item];
+      //const data = JSON.parse(json);
 
-        let fullPractice = '';
-        let notes = '';
+      console.log(data);
 
-        for (let practice in elem.practices) {
-            let info = elem.practices[practice];
+      if (WURFL.is_mobile && WURFL.form_factor === "Smartphone")
+         $("#accordionRPA").append(importanceSmall);
+      else 
+         $("#accordionRPA").append(importance);
 
-            if (info.title === "") {
-                fullPractice += `<ul>`;
-            } else {
-                fullPractice += `<h4>${info.title}</h4><ul>`;
+      for(let item in data) {
+         let elem = data[item];
+
+         let fullPractice = '';
+         let notes = '';
+
+         for (let practice in elem.practices) {
+               let info = elem.practices[practice];
+
+               if (info.title === "") {
+                  fullPractice += `<ul>`;
+               } else {
+                  fullPractice += `<h4>${info.title}</h4><ul>`;
+               }
+
+               var practiceTxt = '';
+
+               for (let itemContent in info.content) {
+                  let content = info.content[itemContent];
+                  practiceTxt += `<li>${content}</li>`;
+               }
+
+               fullPractice += `${practiceTxt}</ul>`;
+         }
+
+         if (elem.notes !== undefined) {
+            if (elem.notes.length > 0) {
+                  notes = `<h5>Notes:</h5><ul style="list-style-type:square;">`;
             }
 
-            var practiceTxt = '';
-
-            for (let itemContent in info.content) {
-                let content = info.content[itemContent];
-                practiceTxt += `<li>${content}</li>`;
+            for (let note in elem.notes) {
+               notes += `<li>${elem.notes[note]}</li>`;
             }
 
-            fullPractice += `${practiceTxt}</ul>`;
-        }
+            if (notes !== "") {
+                  notes += '</ul>';
+            }
+         }
 
-        if (elem.notes.length > 0) {
-            notes = `<h5>Notes:</h5><ul style="list-style-type:square;">`;
-        }
+         let card = cardTemplate.format(item).format(item).format(item).format(item).format(item, elem.section, fullPractice, notes);
 
-        for (let note in elem.notes) {
-            notes += `<li>${elem.notes[note]}</li>`;
-        }
-
-        if (notes !== "") {
-            notes += '</ul>';
-        }
-
-        let card = cardTemplate.format(item).format(item).format(item).format(item).format(item, elem.section, fullPractice, notes);
-
-        $("#accordionRPA").append(card);
-    }
-    
-    $("#accordionRPA").append(contactIFrame);
-    $("#accordionRPA").append(credits);
-    $("#accordionRPA").append(commentsIFrame);
-    $('[data-toggle="tooltip"]').tooltip();
+         $("#accordionRPA").append(card);
+      }
+      
+      $("#accordionRPA").append(contactIFrame);
+      $("#accordionRPA").append(credits);
+      $("#accordionRPA").append(commentsIFrame);
+      $('[data-toggle="tooltip"]').tooltip();
+   });
 });
 
 String.prototype.format = function() {
