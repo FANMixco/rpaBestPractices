@@ -9,17 +9,12 @@
       <meta name="keywords" content="RPA,Robotic Process Automation,AA,Automation Anywhere,UiPath,Best Practices,Industry 4.0,Automation,Robotics,Software Development,Low-Code Development Platforms,LCDP">
       <meta name="author" content="Federico Navarrete">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/index.css">
 
-      <script src="js/external/jquery-3.4.1.min.js"></script>
-      <script src="js/external/popper.min.js"></script>
-      <script src="js/external/bootstrap.min.js"></script>
-      
-      <script src="https://wurfl.io/wurfl.js"></script>
-      <script src="js/libs/string-format.min.js"></script>
-      <script src="js/data/credits.js"></script>
-      <script src="js/libs/displayData.min.js"></script>
+      <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="css/bootstrap.min.css"></noscript>
+
+      <link rel="preload" href="css/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="css/index.css"></noscript>
 
       <!-- Open Graph / Facebook -->
       <meta property="og:type" content="website">
@@ -46,10 +41,21 @@
       <!-- Footer -->
       <footer class="page-footer font-small blue">
          <!-- Copyright -->
-         <div class="footer-copyright text-center py-3">&copy; 2020 - <a href="https://federiconavarrete.com" target="_blank">Federico Navarrete</a> and <a href="https://supernovaic.tk" target="_blank">Supernova IC</a>
+         <div class="footer-copyright text-center py-3">&copy; 2020 - <a href="https://federiconavarrete.com" target="_blank" rel="noopener">Federico Navarrete</a> and <a href="https://supernovaic.tk" target="_blank" rel="noopener">Supernova IC</a>
          </div>
          <!-- Copyright -->
       </footer>
+
+      <script src="js/external/popper.min.js"></script>
+      <script src="js/external/bootstrap.min.js" defer></script>
+      
+      <script src="https://wurfl.io/wurfl.js"></script>
+      <script src="js/libs/string-format.min.js"></script>
+      <script src="js/data/cards.min.js"></script>
+      <script src="js/data/credits.min.js"></script>
+      <script src="js/libs/displayData.min.js"></script>
+
+      <script src="js/external/jquery-3.4.1.slim.min.js"></script>
       <!-- Footer -->
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7438484-13"></script>
@@ -63,6 +69,10 @@
          function googleTranslateElementInit() {
            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es,nl,de,fr,it,en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
          }
+
+         $(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+         });
       </script>
       <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
    </body>
