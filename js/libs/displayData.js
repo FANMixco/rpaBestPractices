@@ -80,8 +80,18 @@ function getData() {
       const btnComments = document.getElementById('btnComments');
 
       btnComments.onclick = commentsClicked;
-    });
+
+      setLinkAttr();
+   });
 };
+
+function setLinkAttr() {
+   var links = document.getElementsByTagName("a");
+   for(var i = 0; i < links.length; i++){
+      links[i].rel = "noopener noreferrer";
+      links[i].target = "_blank";
+   }
+}
 
 contactClicked = function() {
    if (document.getElementById('divContact').innerHTML === "") {
