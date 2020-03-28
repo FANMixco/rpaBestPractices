@@ -3,3 +3,7 @@ div.title {
     padding-bottom: 10px;
     text-align: center;
 }
+
+caption {
+    caption-side: top!important;
+}
