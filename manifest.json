@@ -3,7 +3,7 @@
   "short_name": "Best Practices",
   "theme_color": "#0486ee",
   "background_color": "#ffffff",
-  "display": "browser",
+  "display": "standalone",
   "Scope": "/rpaBestPractices/",
   "start_url": "https://fanmixco.github.io/rpaBestPractices/",
   "icons": [
