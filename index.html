@@ -10,6 +10,7 @@
       <meta name="author" content="Federico Navarrete">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+      <link rel="manifest" href="manifest.json" />
       <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <noscript><link rel="stylesheet" href="css/bootstrap.min.css"></noscript>
 
@@ -74,6 +75,13 @@
             $('[data-toggle="tooltip"]').tooltip();
          });
       </script>
-      <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+   <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+   </script>
+   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
    </body>
 </html>
