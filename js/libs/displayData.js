@@ -14,76 +14,95 @@ function append(elem, html) {
 }
 
 function getData() {
-   fetch(`https://rpa-best-practices.firebaseio.com/practices.json`)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      for(let item in data) {
-         let elem = data[item];
+   let currentCache = getLocalStorageValue("currentCache");
 
-         let fullPractice = '';
-         let notes = '';
+   let currentDiff = 7;
+   
+   if (currentCache !== null) {
+      const diffTime = Math.abs(new Date() - new Date(currentCache));
+      currentDiff = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+   }
 
-         for (let practice in elem.practices) {
-               let info = elem.practices[practice];
+   if (currentDiff === 7) {
+      fetch(`https://rpa-best-practices.firebaseio.com/practices.json`)
+      .then(function(response) {
+         return response.json();
+      })
+      .then(function(data) {
+         setLocalStorage("practices", JSON.stringify(data));
+         var currentDate = new Date();
+         setLocalStorage("currentCache", `${currentDate.getFullYear()}/${currentDate.getMonth() + 1}/${currentDate.getDate()}`);
+         setBestPractices(data);
+      });
+   } else {
+      setBestPractices(JSON.parse(getLocalStorageValue("practices")));
+   }
+}
 
-               if (info.title === "") {
-                  fullPractice += `<ul>`;
-               } else {
-                  fullPractice += `<h4>${info.title}</h4><ul>`;
-               }
+function setBestPractices(data) {
+   for(let item in data) {
+      let elem = data[item];
 
-               var practiceTxt = '';
+      let fullPractice = '';
+      let notes = '';
 
-               for (let itemContent in info.content) {
-                  let content = info.content[itemContent];
-                  practiceTxt += templateLi.format(content);;
-               }
+      for (let practice in elem.practices) {
+            let info = elem.practices[practice];
 
-               fullPractice += `${practiceTxt}</ul>`;
-         }
-
-         if (elem.notes !== undefined) {
-            if (elem.notes.length > 0) {
-                  notes = `<h5>Notes:</h5><ul style="list-style-type:square;">`;
+            if (info.title === "") {
+               fullPractice += `<ul>`;
+            } else {
+               fullPractice += `<h4>${info.title}</h4><ul>`;
             }
 
-            for (let note in elem.notes) {
-               notes += templateLi.format(elem.notes[note]);
+            var practiceTxt = '';
+
+            for (let itemContent in info.content) {
+               practiceTxt += templateLi.format(info.content[itemContent]);;
             }
 
-            if (notes !== "") {
-                  notes += '</ul>';
-            }
-         }
-
-         let card = cardTemplate.format(item).format(item).format(item).format(item).format(item, elem.section, fullPractice, notes);
-
-         append(accordionRPA, card);
-      }
-      
-      append(accordionRPA, cardContact);
-
-      let creditsList = "";
-      for (let item in credits){
-         creditsList += templateLi.format(credits[item]);
+            fullPractice += `${practiceTxt}</ul>`;
       }
 
-      append(accordionRPA, creditsCard.format(creditsList));
-      append(accordionRPA, commentsCard);
+      if (elem.notes !== undefined) {
+         if (elem.notes.length > 0) {
+            notes = `<h5>Notes:</h5><ul style="list-style-type:square;">`;
+         }
 
-      const btnContact = document.getElementById('btnContact');
+         for (let note in elem.notes) {
+            notes += templateLi.format(elem.notes[note]);
+         }
 
-      btnContact.onclick = contactClicked;
+         if (notes !== "") {
+            notes += '</ul>';
+         }
+      }
 
-      const btnComments = document.getElementById('btnComments');
+      let card = cardTemplate.format(item).format(item).format(item).format(item).format(item, elem.section, fullPractice, notes);
 
-      btnComments.onclick = commentsClicked;
+      append(accordionRPA, card);
+   }
+   
+   append(accordionRPA, cardContact);
 
-      setLinkAttr();
-   });
-};
+   let creditsList = "";
+   for (let item in credits){
+      creditsList += templateLi.format(credits[item]);
+   }
+
+   append(accordionRPA, creditsCard.format(creditsList));
+   append(accordionRPA, commentsCard);
+
+   const btnContact = document.getElementById('btnContact');
+
+   btnContact.onclick = contactClicked;
+
+   const btnComments = document.getElementById('btnComments');
+
+   btnComments.onclick = commentsClicked;
+
+   setLinkAttr();
+}
 
 function setLinkAttr() {
    var links = document.getElementsByTagName("a");

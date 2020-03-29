@@ -57,6 +57,7 @@
       <script src="js/libs/string-format.min.js"></script>
       <script src="js/data/cards.min.js"></script>
       <script src="js/data/credits.min.js"></script>
+      <script src="js/libs/localStorageMng.min.js"></script>
       <script src="js/libs/displayData.min.js"></script>
 
       <script src="js/external/jquery-3.4.1.slim.min.js"></script>
@@ -79,12 +80,12 @@
          });
       </script>
 
-   <script type="module">
-      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+      <script type="module">
+         import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
-      const el = document.createElement('pwa-update');
-      document.body.appendChild(el);
-   </script>
-   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+         const el = document.createElement('pwa-update');
+         document.body.appendChild(el);
+      </script>
+      <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
    </body>
 </html>
