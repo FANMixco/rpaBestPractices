@@ -107,8 +107,10 @@ function setBestPractices(data) {
 function setLinkAttr() {
    var links = document.getElementsByTagName("a");
    for(var i = 0; i < links.length; i++){
-      links[i].rel = "noopener noreferrer";
-      links[i].target = "_blank";
+      if (links[i].className !== "goog-te-menu-value") {
+         links[i].rel = "noopener noreferrer";
+         links[i].target = "_blank";
+      }
    }
 }
 
