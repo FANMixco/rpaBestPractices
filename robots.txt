@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://rpa-practices.federiconavarrete.com/sitemap.xml
